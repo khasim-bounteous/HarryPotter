@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <ion-spinner *ngIf="!isLoaded" name="crescent"></ion-spinner>
+  <div class="film-details"  *ngIf="film$ | async as film">
+    <div class="film-details-header">
+      <div class="film-details-bg"></div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img class="film-image" [src]="film.data.urlImage" alt="">
+            <h1 class="film-title">{{film.data.name}}</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="film-details-container">
+      <div class="film-detials-description">
+        {{film.data.description}}
+      </div>
+    </div>
+  </div>
+</ion-content>

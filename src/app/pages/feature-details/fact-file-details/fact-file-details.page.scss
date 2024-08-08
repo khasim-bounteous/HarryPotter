@@ -1,0 +1,284 @@
+ion-content {
+    --ion-background-color: #000000 !important;
+}
+
+
+.feature-root {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../../../assets/bg-images/fact-file-feature-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    background-position-x: 50%;
+    background-position-y: 0%;
+    background-repeat: repeat-x;
+    background-size: 1800px;
+    padding-top: 40px;
+}
+
+
+.feature-search {
+    max-width: 780px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+
+    &-input {
+        font-size: 20px;
+        font-weight: 400;
+        height: 50px;
+        width: 100%;
+        background: #1e1a11;
+        padding: 10px 60px 10px 20px;
+        border-radius: 40px;
+        border: 2px solid hsla(37, 29%, 65%, .439);
+        box-sizing: border-box;
+        color: #fff;
+    }
+
+    &-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        background: #64563a;
+        padding: 11px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+}
+
+.featured-badge {
+    position: absolute;
+    top: -4px;
+    right: 25px;
+    background-color: rgb(91, 72, 130);
+    box-shadow: rgba(0, 0, 0, 0.2) 2.24px 5.98px 5.98px 0px;
+    color: rgb(249, 244, 242);
+    padding: 10px 5px 0px 5px;
+    height: 98px;
+    width: 88px;
+    text-align: center;
+    font-size: 9.72px;
+
+    &-frame {
+        background-clip: border-box;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: url(https://www.wizardingworld.com/images/pages/fact-file/frame.svg);
+        background-origin: padding-box;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(249, 244, 242);
+        height: 94px;
+        position: absolute;
+        right: 2px;
+        top: 0px;
+        bottom: 2px;
+        left: 2px;
+    }
+
+    &-image {
+        height: 40px;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.feature {
+    max-width: 1080px;
+    margin: 50px auto;
+    z-index: 100;
+
+    &-header {
+        padding: 40px 200px 40px 40px;
+        background-color: rgb(40, 29, 64);
+        margin: 0px 10px;
+        position: relative;
+    }
+
+    &-title {
+        color: rgb(169, 169, 169);
+        font-family: "Sofia Pro", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 160%;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    &-description {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 32px;
+    }
+
+    &-content {
+        background-color: rgb(56, 44, 68);
+        display: flex;
+        padding: 30px;
+        gap: 35px;
+        margin: 0px 10px;
+
+        &-main {
+            flex: 1 1;
+            font-size: 20px;
+            line-height: 32px;
+        }
+
+        &-sidebar {
+            width: 360px;
+            padding: 30px;
+            background-color: rgb(61, 52, 88);
+
+            &-border {
+                display: flex;
+                align-items: center;
+                mix-blend-mode: luminosity;
+            }
+
+            &-inner {
+                font-size: 15px;
+                font-weight: 300;
+                height: auto;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+hr {
+    flex: 1 1;
+    height: 1px;
+    background-color: #696b78;
+    overflow: hidden;
+    margin: 0px 5px;
+}
+
+.sidebar-title {
+    font-size: 20px;
+}
+
+.feature-img-con {
+    max-height: 416px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+
+@media (max-width:1200px) {
+
+    .feature-root {
+        background-size: 800px;
+    }
+
+    .feature-content {
+        background-color: rgb(56, 44, 68);
+        display: block;
+    }
+    .feature{
+        margin-top: 30px;
+    }
+    .feature-search {
+        max-width: 780px;
+        width: 100%;
+        position: relative;
+        margin: auto;
+        padding: 0px 10px;
+        &-input {
+            font-size: 13px;
+            font-weight: 400;
+            height: 40px;
+            width: 100%;
+            background: #1e1a11;
+            padding: 10px 60px 10px 20px;
+            border-radius: 40px;
+            border: 2px solid hsla(37, 29%, 65%, .439);
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        &-btn {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            border: none;
+            background: #64563a;
+            padding: 11px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+
+    .sidebar-title {
+        font-size: 18px;
+    }
+
+    .feature-content-sidebar {
+
+        width: 100%;
+        margin-top: 40px;
+        padding: 0px;
+        background-color: inherit;
+
+        &-inner {
+            font-size: 13.5px;
+            font-weight: 300;
+            height: auto;
+            line-height: 19px;
+        }
+    }
+
+    .feature-header {
+        padding: 10px 100px 10px 20px;
+    }
+
+    .feature-img-con {
+
+        margin: 0px auto;
+        height: 100%;
+        width: 100%;
+    }
+
+    .feature-img {
+        margin: 0px auto;
+        border-radius: 0px;
+    }
+
+    .feature-description {
+        font-size: 13.5px;
+    }
+
+    .featured-badge {
+        height: 70px;
+        width: 60px;
+
+        &-frame {
+            height: 65px;
+        }
+
+        &-image {
+            height: 25px;
+            width: auto;
+            margin-bottom: 4px;
+        }
+
+        &-content {
+            font-size: 8px;
+        }
+    }
+
+}

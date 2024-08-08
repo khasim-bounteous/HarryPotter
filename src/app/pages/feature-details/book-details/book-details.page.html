@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" >
+  <ion-spinner *ngIf="!isLoaded" name="crescent"></ion-spinner>
+  <div class="book-details" *ngIf="book$ | async as book">
+    <div class="book-details-header">
+      <div class="book-details-bg"></div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img class="book-image" [src]="book.data.urlImage" alt="">
+            <h1 class="book-title">{{book.data.name}}</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="book-details-container">
+      <div class="book-detials-description">
+        {{book.data.description}}
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div class="root">
+    <nav class="nav">
+      <ion-row class="">
+        <ion-col size="2">
+        </ion-col>
+        <ion-col size="8" class="nav-center">
+          <img class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
+        </ion-col>
+      </ion-row>
+    </nav>
+    <div *ngIf="wand === null && questions.length > currentQuestionIndex" class="question-container">
+      <div class="question-content">
+        <div class="bg-img" [ngStyle]="{ 'background-image': 'url(' + currentQuestion.bgImage + ')' }"></div>
+        <h2>{{ questions[currentQuestionIndex].text }}</h2>
+        <ion-radio-group [(ngModel)]="selectedOption">
+          <ion-row class="custom-row-gap">
+            <ion-col sizeLg="4" sizeMd="4" sizeSm="6" sizeXs="12" size
+              *ngFor="let option of questions[currentQuestionIndex].options">
+              <ion-radio (click)="selectAnswer(option.wand)" [value]="option.answer" labelPlacement="end">{{
+                option.answer }}</ion-radio>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </div>
+    </div>
+
+    <div *ngIf="wand !== null" class="result-container">
+      <h2>Your Wand is: {{ wand }}</h2>
+      <ion-button expand="full" (click)="resetQuiz()">Reset Quiz</ion-button>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,8 @@
+<div [routerLink]="['/menu/jk-rowling-originals/',writingData.key]" class="writing-card">
+  <img *ngIf="writingData.data.urlImage else default" class="writing-image" [src]="writingData.data.urlImage" alt="">
+  <ng-template #default>
+    <img class="writing-image writing-null-image" src="	https://www.wizardingworld.com/images/wwlogo.svg" alt="">
+  </ng-template>
+  <div class="writing-title">{{writingData.data.name}}</div>
+</div>
+

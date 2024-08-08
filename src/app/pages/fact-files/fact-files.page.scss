@@ -1,0 +1,327 @@
+ion-content {
+    --ion-background-color: #000000 !important;
+}
+
+.fact-file {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fact-file-header {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    background-image: url('../../../assets/fact-files/fact-files-header.svg');
+    background-repeat: no-repeat;
+    background-position: 50% -11px;
+    background-size: cover;
+    height: 280px;
+
+    &-input {
+        font-size: 20px;
+        font-weight: 400;
+        height: 50px;
+        width: 100%;
+        background: #1e1a11;
+        padding: 10px 60px 10px 20px;
+        border-radius: 40px;
+        border: 2px solid hsla(37, 29%, 65%, .439);
+        box-sizing: border-box;
+        color: #fff;
+    }
+
+    &-search-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        background: #64563a;
+        padding: 11px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
+}
+
+.fact-file-header-container {
+    position: relative;
+    top: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+
+    &-inner {
+        max-width: 780px;
+        width: 100%;
+        position: relative;
+    }
+}
+
+
+.fact-file-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 0 20px;
+}
+
+//container
+
+.fact-file-content-container {
+    padding: 10px;
+}
+
+.featured-anchor-file {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+
+    &-root {
+        background-color: rgb(40, 29, 64);
+        cursor: pointer;
+        display: flex;
+        position: relative;
+        border-radius: 5px;
+    }
+}
+
+.featured-badge {
+    position: absolute;
+    top: -4px;
+    right: 25px;
+    background-color: rgb(91, 72, 130);
+    box-shadow: rgba(0, 0, 0, 0.2) 2.24px 5.98px 5.98px 0px;
+    color: rgb(249, 244, 242);
+    padding: 10px 5px 0px 5px;
+    height: 98px;
+    width: 88px;
+    text-align: center;
+    font-size: 9.72px;
+
+    &-frame {
+        background-clip: border-box;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: url(https://www.wizardingworld.com/images/pages/fact-file/frame.svg);
+        background-origin: padding-box;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: rgb(249, 244, 242);
+        height: 94px;
+        position: absolute;
+        right: 2px;
+        top: 0px;
+        bottom: 2px;
+        left: 2px;
+    }
+
+    &-image {
+        height: 40px;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.featured-image-container {
+    width: 40%;
+    padding: 0px;
+    margin: 0px;
+    height: 400px;
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.featured-content {
+    width: 60%;
+    padding: 100px 50px 10px 50px;
+    line-height: 24px;
+    color: white;
+
+    &-span {
+        margin-top: 30px;
+        text-decoration: underline;
+        text-decoration-color: rgb(186, 156, 103);
+        color: rgb(186, 156, 103);
+    }
+
+    &-inner {
+        color: white;
+        line-height: 24px;
+        font-weight: 400;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        text-overflow: ellipsis;
+        unicode-bidi: isolate;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3
+    }
+
+    // display: flex;
+}
+
+.fact-file-divider {
+    margin: 40px 0px;
+    width: 100%;
+    border-image-source: linear-gradient(270deg, rgba(111, 105, 103, 0.5), rgb(111, 105, 103) 21.18%, rgb(111, 105, 103) 79%, rgba(111, 105, 103, 0.5));
+    border-image-slice: 1;
+    border-image-width: 1px;
+    border-bottom: 1px solid transparent;
+}
+
+
+// FILTER
+.fact-file-filter-container {
+    display: flex;
+    gap: 0px 15px;
+    flex-wrap: wrap;
+    /* Ensures items wrap */
+}
+
+.filter-box {
+    height: 170px;
+    background-color: rgb(28, 30, 39);
+    padding: 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: rgb(209, 176, 125);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-family: "Sofia Pro", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.filter-box-inner{
+}
+
+.filter-icon{
+    height: 70px;
+    width: auto;
+    margin-bottom: 10px;
+    color: rgb(150, 135, 197);
+    // color: rgb(150, 135, 197)
+}
+
+  
+  .fact-item app-fact-card {
+    flex-grow: 1; /* Ensures the card takes the full height of the container */
+  }
+// media quries
+@media (max-width:1200px) {
+
+    .featured-badge {
+        height: 70px;
+        width: 60px;
+
+        &-frame {
+            height: 65px;
+        }
+
+        &-image {
+            height: 25px;
+            width: auto;
+            margin-bottom: 4px;
+        }
+
+        &-content {
+            font-size: 8px;
+        }
+    }
+
+    .featured-image-container {
+        width: 50%;
+        height: 300px;
+    }
+
+    .featured-content {
+        height: 300px;
+        padding: 50px 50px 10px 50px;
+        width: 50%;
+
+        &-inner {
+            color: rgb(210, 211, 219);
+            font-size: 14px;
+            -webkit-line-clamp: 2
+        }
+    }
+}
+
+@media (max-width:768px) {
+
+    .featured-image-container {
+        height: 250px;
+    }
+
+    .featured-content {
+        height: 250px;
+    }
+
+    .fact-file-filter-container {
+        gap: 12px 15px;
+    }
+    .filter-icon{
+        height: 50px;
+        width: auto;
+    }
+
+    .filter-box {
+        flex-basis: 20%;
+        height: 125px;
+    }
+}
+
+
+@media (max-width:570px) {
+    .fact-file-header {
+        height: 225px;
+    }
+
+    .fact-file-header-container {
+        position: relative;
+        top: 140px;
+    }
+
+    .featured-anchor-file-root {
+        display: block
+    }
+
+    .featured-image-container {
+        height: 250px;
+        width: 100%;
+    }
+
+    .featured-content {
+        width: 100%;
+        padding: 30px;
+    }
+
+    // filter
+    .fact-file-filter-container {
+        gap: 10px 12px;
+    }
+    .filter-icon{
+        height: 40px;
+        width: auto;
+    }
+    .filter-box {
+        flex-basis: 20%;
+        height: 125px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}

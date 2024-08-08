@@ -1,0 +1,5 @@
+ion-header {
+    @media (min-width: 768px) {
+      position: static; /* Make the header scrollable on larger screens */
+    }
+  }

@@ -1,0 +1,76 @@
+<ion-content >
+  <div class="singup-main">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4" class="auth-header ion-text-center">
+        <div class="auth-header-logo">
+            <ion-img src="../../../assets/logo.svg" alt="logo">
+            </ion-img>
+        </div>
+        <div class="auth-header-con">
+          <hr>
+          <div class="auth-diamond"></div>
+          <h1>Sign Up</h1>
+          <div class="auth-diamond"></div>
+          <hr>
+        </div>
+        <div class="auth-header-des">
+          Enjoy magical features including the official sorting ceremony, portrait maker and more!
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <form action="" (submit)="onSubmit()" [formGroup]="signupForm" class="signup-form">
+          <div class="signup-form-div">
+            <label class="signup-form-label" for="">DATE OF BIRTH</label>
+            <ion-input class="signup-form-input" placeholder="DD/MM/YYYY" fill="outline"></ion-input>
+          </div>
+          <div class="signup-form-div">
+            <label class="signup-form-label" for="">EMAIL ADDRESS</label>
+            <ion-input class="signup-form-input" formControlName="email" fill="outline"></ion-input>
+            <div class="input-invalid"
+              *ngIf="signupForm.get('email')!.invalid && signupForm.get('email')?.touched ">
+              Email is required*
+            </div>
+          </div>
+          <div class="signup-form-div">
+            <label class="signup-form-label" for="">PASSWORD</label>
+            <ion-input class="signup-form-input" formControlName="password" fill="outline">
+              <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+            </ion-input>
+            <div class="input-invalid"
+              *ngIf="signupForm.get('password')!.invalid && signupForm.get('password')?.touched ">
+              Password is required*
+            </div>
+          </div>
+          <div class="signup-form-name">
+            <div class="signup-form-div">
+              <label class="signup-form-label" for="">FIRST NAME</label>
+              <ion-input class="signup-form-input" formControlName="firstName" fill="outline"></ion-input>
+            </div>
+            <div class="signup-form-div">
+              <label class="signup-form-label" for="">LAST NAME</label>
+              <ion-input class="signup-form-input" formControlName="lastName" fill="outline"></ion-input>
+            </div>
+          </div>
+          <div class="input-invalid"
+              *ngIf="signupForm.get('firstName')!.invalid && signupForm.get('firstName')?.touched ">
+              name is required*
+            </div>
+          <div class="signup-form-buttons">
+            <p class="auth-terms">By proceeding you agree to our Terms of Use and acknowledge our Privacy Policy.</p>
+            <button type="submit"  class="singup-button">SIGN UP</button>
+          </div>
+        </form>
+
+        <div class="auth-footer">
+            <hr>
+            <h1>Already have an account?</h1>
+            <button routerLink="/login" class="login-button">LOGIN</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</ion-content>

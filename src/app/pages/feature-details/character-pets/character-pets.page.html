@@ -1,0 +1,81 @@
+<ion-content>
+  <div class="feature-root">
+    <div class="feature-bg"></div>
+    <div class="feature-search">
+      <input type="text" class="feature-search-input" placeholder="Search fact files...">
+      <button class="feature-search-btn">
+        <img src="../../../assets/fact-files/search.svg" alt="search icon">
+      </button>
+    </div>
+    <div class="feature">
+      <div class="feature-header">
+        <h3>Albus Dumbledore</h3>
+        <div class="featured-badge">
+          <div class="featured-badge-frame"></div>
+          <picture><img class="featured-badge-image" src="../../../assets/fact-files/category-icon-characters-and-pets-desktop.svg" alt=""></picture>
+          <div class="featured-badge-content">CHARACTERS & PETS</div>
+        </div>
+      </div>
+      <div class="feature-content">
+        <div class="feature-content-main">
+          <div class="feature-img-con">
+            <img class="feature-img" [src]="items.urlImage" alt="">
+          </div>
+          <div class="feature-title">{{items.name}}</div>
+          <div class="feature-description">{{items.description}}</div>
+        </div>
+        <div *ngIf="items.sidenav" class="feature-content-sidebar">
+          <div class="feature-content-sidebar-border"><img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgOSA5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTguNjQ0MDMgNC44MDc2N0w1LjgyNTE4IDMuNjQxMjlMNC44MDcyNCAwLjcyNTE4NUwzLjY0MDc0IDMuNjQxMjlMMC43MjQ3OTcgNC41NjE4NkwzLjY0MDc0IDUuODI1NzNMNC41NjE1OSA4LjY0NDM0TDUuODI1MTggNS44MjU3M0w4LjY0NDAzIDQuODA3NjdaIiBmaWxsPSIjOTk5MEVBIi8+Cjwvc3ZnPgo="
+              alt="star">
+            <hr>
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgOSA5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTguNjQ0MDMgNC44MDc2N0w1LjgyNTE4IDMuNjQxMjlMNC44MDcyNCAwLjcyNTE4NUwzLjY0MDc0IDMuNjQxMjlMMC43MjQ3OTcgNC41NjE4NkwzLjY0MDc0IDUuODI1NzNMNC41NjE1OSA4LjY0NDM0TDUuODI1MTggNS44MjU3M0w4LjY0NDAzIDQuODA3NjdaIiBmaWxsPSIjOTk5MEVBIi8+Cjwvc3ZnPgo="
+              alt="star">
+          </div>
+          <div class="feature-content-sidebar-inner">
+            <div class="sidebar-item" *ngFor="let item of items.sidenav">
+              <h3 class="sidebar-title">{{item.title | uppercase}}</h3>
+              <div>
+                <p *ngFor="let appearance of item.values">{{appearance}}</p>
+              </div>
+              <hr>
+            </div>
+            <!-- <div class="sidebar-item">
+              <h3 class="sidebar-title">HOUSE</h3>
+              <p>{{item.house}}</p>
+              <hr>
+            </div>
+            <div class="sidebar-item">
+              <h3 class="sidebar-title">WAND</h3>
+              <div>
+                <p *ngFor="let wandItem of item.wand">{{wandItem}}</p>
+              </div>
+              <hr>
+            </div>
+            <div class="sidebar-item">
+              <h3 class="sidebar-title">FAMILY CONNECTION/AFFILIATION</h3>
+              <div>
+                <p *ngFor="let connection of item.family_affiliation">{{connection}}</p>
+              </div>
+              <hr>
+            </div>
+            <div class="sidebar-item">
+              <h3 class="sidebar-title">SKILLS</h3>
+              <div>
+                <p *ngFor="let skill of item.skills">{{skill}}</p>
+              </div>
+              <hr>
+            </div>
+            <div class="sidebar-item">
+              <h3 class="sidebar-title">HOBBIES</h3>
+              <div>
+                <p *ngFor="let hobbie of item.hobbies">{{hobbie}}</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

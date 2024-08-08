@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <div class="root" *ngIf="jkOriginal$ | async as jkOriginal">
+    <div class="hero">
+      <div class="hero-bg">
+        <picture>
+          <img
+            [src]="jkOriginal.data.urlImage"
+            alt="">
+        </picture>
+      </div>
+      <div class="hero-inner">
+        <h1 class="hero-title">{{jkOriginal.data.title}}</h1>
+        <p class="hero-author">{{jkOriginal.data.author}}</p>
+        <p class="hero-clock">{{jkOriginal.data.published_on}}</p>
+      </div>
+    </div>
+    <div class="con">
+      <div class="con-inner" >
+        <p>{{jkOriginal.data.description}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

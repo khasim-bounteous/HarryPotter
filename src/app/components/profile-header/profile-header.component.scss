@@ -1,0 +1,113 @@
+.nav{
+    background-color: black;
+    padding: 5px 10px;
+    color: #22D3EE;
+    height: 100px;
+    width: 400px;
+    font-weight: bold;
+    &-start{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        h3{
+            font-weight: inherit;
+        }
+        a{
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    &-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-button{
+            font-weight: inherit;
+            cursor: pointer;
+            color: inherit;
+        }
+    }
+
+    &-end{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0px 20px;
+    }
+
+    &-logo{
+        // border-radius: 50%;
+        height: 60px;
+        width: fit-content
+    }
+}
+
+.secondary-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.search{
+    width: 220px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #353434;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: normal;
+}
+.nav-feature{
+    color: white;
+    font-weight:600;
+}
+.dropdown{
+    width: 100vw;
+    height: 150px;
+    background-color: rgb(20, 31, 51);
+    position: absolute;
+    top: 135px;
+    left: 0px;
+    z-index: 1;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.2s, 0.2s;
+    transition-property: bottom, opacity;
+    transition-timing-function: ease-in, ease-in;
+    ion-item:hover {
+        --ion-item-color: var(--ion-color-primary)
+    }
+}
+
+
+@media(min-width:968px) {
+    .mobile-nav{
+        display: none;
+    }
+
+    .nav{
+        display: block;
+        padding: 5px 10px;
+    }
+}
+
+.active-item{
+    border-bottom: 2px solid var(--ion-color-primary);
+}
+
+@media(max-width:968px){
+    .mobile-nav{
+        display: block;
+    }
+
+    .nav{
+        display: none;
+    }
+}

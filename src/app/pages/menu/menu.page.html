@@ -1,0 +1,26 @@
+<ion-menu contentId="main" menuId="myMenu" side="start" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-menu-toggle>
+      <ion-item *ngFor="let item of menuItems"  [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.path" routerLinkActive="router-link-active" >
+        <ion-icon [name]="item.icon" slot="start"></ion-icon>
+        {{item.title}}
+      </ion-item>
+      <ion-item *ngIf="userLoggedIn" (click)="onLogout()">
+        Logout
+      </ion-item>
+      <ion-item  *ngIf="!userLoggedIn" routerLink="/login" >
+        Login
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+
+<app-header></app-header>
+<ion-content id="main">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

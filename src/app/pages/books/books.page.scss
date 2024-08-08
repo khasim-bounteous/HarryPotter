@@ -1,0 +1,74 @@
+ion-content{
+    --ion-background-color: rgba(16,20,27,255)
+}
+
+.books-main { 
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/bg-images/books-desk-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; 
+
+    &-content{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+}
+
+
+.books-hp{
+        
+    &-title{
+        font-size: 32px;
+        font-weight: 600;
+        margin: 40px 0px;
+    }
+    &-header{
+        text-align: center;
+        &-design{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }        
+        hr {
+            flex: 1 1;
+            height: 1px;
+            background-color: #75757541;
+            overflow: hidden;
+            margin: 10px 0px;
+        } 
+    }
+}  
+.loader {
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+    z-index: 9999; /* Ensure it's on top of other content */
+    ion-spinner{
+        height: 50px;
+        width: 50px;
+    }
+}
+.auth-diamond{
+    height: 16px;
+    width: 32px;
+    background-image: url(https://www.wizardingworld.com/images/icons/diamonds.svg);
+    color: red;
+    margin: 0 10px;
+}
+
+ion-grid {
+    max-width: 1200px;
+    ion-col {
+      display: flex;
+      justify-content: center;
+    }
+}

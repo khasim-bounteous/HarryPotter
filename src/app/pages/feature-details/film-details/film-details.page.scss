@@ -1,0 +1,165 @@
+ion-content {
+    --ion-background-color: #ffffff !important;
+}
+
+ion-spinner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: black;
+    height: 60px;
+    width: 50px;
+    transform: translate(50% 50%);
+   
+}
+
+.film-details {
+    position: relative;
+}
+
+.film-details-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 55px;
+    background-color: white;
+    z-index: -2;
+}
+
+.film-details-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background: url('../../../../assets/bg-images/films-desk-bg.webp') no-repeat center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.film-image {
+    height: 35rem;
+    border-radius: 10px;
+}
+
+.film-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 1px hsla(36, 50%, 96%, .2);
+    white-space: pre-line;
+}
+
+.film-details-container {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-detials-description {
+    width: 60%;
+    max-width: 800px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    font-family: "Outfit", sans-serif;
+}
+
+.film-detials-description::first-letter {
+    font-size: 120px;
+    font-weight: 700;
+    display: block;
+    float: left;
+    line-height: 120px;
+    color: rgba(0, 0, 0, 0);
+    background: linear-gradient(45deg, rgb(182, 165, 113), rgb(205, 179, 115), rgb(231, 218, 154));
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: letterGradient 3s ease infinite;
+    padding-right: 10px;
+    position: relative;
+    white-space-collapse: preserve;
+}
+
+@keyframes letterGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+ion-grid {
+    max-width: 1040px;
+
+    ion-col {
+        display: flex;
+        gap: 0px 40px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1040px) {
+    ion-grid {
+        ion-col {
+            flex-direction: row; // Side by side when width is greater than 1040px
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    .film-details-header {
+        flex-direction: column; // Ensure stacking for header contents
+        height: auto;
+    }
+
+    .film-title {
+        font-size: 30px;
+        color: #202020;
+        text-align: center;
+        max-width: 300px;
+        margin-top: 20px;
+        margin-bottom: 7px;
+    }
+
+    .film-detials-description {
+        width: 80%;
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .film-details-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: url('../../../../assets/bg-images/films-desk-bg.webp') no-repeat center;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .film-image {
+        flex-shrink: 0;
+        width: 217px;
+        height: 336px;
+        position: relative;
+        border-radius: 0px;
+    }
+
+    ion-grid {
+        ion-col {
+            flex-direction: column; // Ensure stacking for grid contents
+            align-items: center;
+        }
+    }
+}

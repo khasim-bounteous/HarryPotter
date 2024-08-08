@@ -1,0 +1,28 @@
+ion-content{
+    --ion-background-color: rgb(16, 20, 27)
+}
+.root-inner{
+    margin: auto;
+    padding: 100px 20px;
+    max-width: 600px;
+    text-align: center
+}
+
+.title{
+    font-size: 40px;
+}
+
+.sub-title{
+    font-size: 18px;
+}
+.content{
+    margin: 50px 0px;
+}
+.home-button{
+    padding: 15px 25px;
+    border-radius: 30px;
+    background-color: white;
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+}

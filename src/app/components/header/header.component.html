@@ -1,0 +1,29 @@
+<ion-header class="mobile-nav">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<nav class="nav">
+  <ion-row class="">
+    <ion-col size="2">
+      <!-- <img src="../../../assets/logo.png" width="50px" alt=""> -->
+    </ion-col>
+    <ion-col size="8" class="nav-center">
+      <img routerLink="/menu/home" class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
+    </ion-col>
+    <ion-col size="2" class="nav-end">
+        <input fill="outline" placeholder="Search" class="search">
+        <img routerLink="/menu/profile" class="profile-pic" src="../../../assets/profile.jpg" />
+    </ion-col>
+  </ion-row>
+  <div class="secondary-nav" >
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/films" routerDirection="root" routerLinkActive="active-item" >FILMS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item" >J.K. ROWLING ARCHIVE</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/books" routerDirection="root" routerLinkActive="active-item" >BOOKS</ion-button>
+    <ion-button fill="clear" class="nav-feature" (click)="onLogout()">LOGOUT</ion-button>
+  </div>
+
+</nav>

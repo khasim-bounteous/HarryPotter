@@ -1,0 +1,49 @@
+.fact-card {
+    border-radius: 10px;
+    background-color: rgb(49, 62, 61);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+  
+  .fact-image {
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    aspect-ratio: 1.3 / 1;
+  }
+
+  .fact-null-image{
+    padding: 20px;
+  }
+  
+  .fact-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px;
+  }
+
+  .fact-category{
+    position: absolute;
+    top: -4px;
+    right: 12px;
+    border: 1px solid white;
+    height: 40px;
+    width: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 2px;
+    background-color: inherit;
+
+    &-img{
+        height: 35px;
+        padding: 5px;
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-color: inherit;
+    }
+  }

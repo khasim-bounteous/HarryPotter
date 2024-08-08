@@ -1,0 +1,62 @@
+<ion-content class="fact-file">
+  <div class="fact-file-container">
+    <div class="fact-file-header">
+      <div class="fact-file-header-bg"></div>
+      <div class="fact-file-header-container">
+        <div class="fact-file-header-container-inner">
+          <input type="text" class="fact-file-header-input" [(ngModel)]="searchTerm" placeholder="Search fact files...">
+          <button (click)="loadFactFiles()" class="fact-file-header-search-btn">
+            <img src="../../../assets/fact-files/search.svg" alt="search icon">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-file-content-container">
+      <a href="" class="featured-anchor-file">
+        <div class="featured-anchor-file-root">
+          <div class="featured-badge">
+            <div class="featured-badge-frame"></div>
+            <picture><img class="featured-badge-image" src="../../../assets/fact-files/category-icon-characters-and-pets-desktop.svg" alt=""></picture>
+            <div class="featured-badge-content">CHARACTERS & PETS</div>
+          </div>
+          <div class="featured-image-container">
+            <img src="../../../assets/bg-images/malfoy-img.webp" alt="">
+          </div>
+          <div class="featured-content">
+            <div>FEATURED FACT FILE</div>
+            <h3>Draco Malfoy</h3>
+            <div class="featured-content-inner">
+              A Slytherin pupil who had a strong rivalry with Harry Potter and a family loyal to Lord Voldemort, from the moment Draco and Harry met in Madam Malkin’s Robes for All Occasions the two didn’t see eye to eye. Harry rejected Draco’s...
+            </div>
+            <p class="featured-content-span">READ MORE</p>
+          </div>
+          
+        </div>
+      </a>
+      <div class="fact-file-divider"></div>
+      <div class="fact-file-filter-container">
+        <div *ngFor="let item of factFilter" (click)="getFactFilesByCategory(item.filter)" class="filter-box">
+          <!-- Content for filter box goes here -->
+           <div class="filter-box-inner">
+              <img class="filter-icon" src="../../../assets/fact-files/{{item.filter_img}}" alt="">
+              <div>{{item.filter}}</div>
+           </div>
+        </div>
+      </div>
+      <ion-grid  class="fact-items-grid" *ngIf="factFiles$ | async as factFiles">
+        <ion-row>
+          <ion-col *ngFor="let factFile of factFiles" sizeXl="3" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="6">
+            <app-fact-card [factFile]="factFile"></app-fact-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <button (click)="loadMore()">Load fact</button>
+       <!-- Infinite Scroll -->
+       <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more fact files...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll> -->
+    </div>
+  </div>
+</ion-content>
