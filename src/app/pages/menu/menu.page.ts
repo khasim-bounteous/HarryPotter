@@ -3,7 +3,7 @@ import { MenuController, Platform } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { FactFiles } from 'src/app/interface/fact-file';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
-import { loadFactFiles } from 'src/app/store/Potter.action';
+import { loadFactFiles, loadUserDetails } from 'src/app/store/Potter.action';
 
 @Component({
   selector: 'app-menu',
@@ -56,12 +56,12 @@ export class MenuPage implements OnInit {
     const width = this.plt.width();
     this.toggleMenu(width);
     this.initialize()
-
+    
   }
 
   initialize(){
-    this.store.dispatch(loadFactFiles({category: "all",searchTerm: null}));
-    console.log(this.firebaeAuthService.getUser())
+    // this.store.dispatch(loadFactFiles({category: "all",searchTerm: null}));
+    this.store.dispatch(loadUserDetails())
   }
 
   onLogout(){

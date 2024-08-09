@@ -2,8 +2,8 @@
   <div class="feature-root">
     <div class="feature-bg"></div>
     <div class="feature-search">
-      <input type="text" class="feature-search-input" placeholder="Search fact files...">
-      <button class="feature-search-btn">
+      <input type="text" class="feature-search-input" [(ngModel)]="searchTerm" placeholder="Search fact files...">
+      <button (click)="onSearch()"  class="feature-search-btn">
         <img src="../../../assets/fact-files/search.svg" alt="search icon">
       </button>
     </div>
@@ -43,6 +43,19 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="no-data" *ngIf="factFile==null">
+      <div class="edge-line">
+        <hr>
+        <img  class="book-icon" src="../../../../assets/fact-files/book-icon.svg" alt="">
+        <hr>
+      </div>
+      <h1 class="no-data-title">Opps!! no search result found</h1>
+      <div class="edge-line">
+        <hr>
+        <img  class="book-icon" src="../../../../assets/fact-files/book-icon.svg" alt="">
+        <hr>
       </div>
     </div>
   </div>

@@ -71,7 +71,7 @@ export class FirebaesAuthService {
       const userRef = ref(this.db, `users/${user.uid}`);
       const snapshot = await get(userRef);
       if (snapshot.exists()) {
-        return snapshot.val(); // This returns the user details object
+        return snapshot.val(); 
       }
     }
     return null;

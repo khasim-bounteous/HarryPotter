@@ -1,6 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { IonicSlides } from '@ionic/angular';
+import { UserDetails } from 'src/app/interface/userauth';
+import { Store } from '@ngrx/store';
+import { getUserDetails } from 'src/app/store/Potter.selector';
 // register Swiper custom elements
 register();
 
@@ -9,11 +12,19 @@ register();
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit , AfterViewInit {
 
   @ViewChild('swiper1') swiper1!: ElementRef<any>;
   @ViewChild('swiper2') swiper2!: ElementRef<any>;
-  constructor() {}
+
+  constructor(
+    private store: Store<{userDetails:UserDetails}>
+  ) {}
+
+  userDetails : UserDetails | null = null
+  ngOnInit(): void {
+      this.store.select(getUserDetails).subscribe(userDetails =>this.userDetails = userDetails)
+  }
 
   ngAfterViewInit() {
     const swiperParams = {
@@ -41,7 +52,7 @@ export class HomePage {
     this.swiper1.nativeElement.initialize();
 
     Object.assign(this.swiper2.nativeElement, swiperParams);
-    this.swiper1.nativeElement.initialize();
+    this.swiper2.nativeElement.initialize();
   }
   
 }

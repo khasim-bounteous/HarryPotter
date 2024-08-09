@@ -18,63 +18,37 @@
                   <img src="../../../assets/profile/download.svg" alt="">
                 </picture>
                 <p>HOUSE</p>
-                <p>Gryffindor</p>
+                <p>{{this.userDetails?.house}}</p>
               </div>
               <div class="profile-panel-feature">
                 <picture>
                   <img src="../../../assets/profile/download.svg" alt="">
                 </picture>
-                <p>HOUSE</p>
-                <p>Gryffindor</p>
+                <p>PATRONUS</p>
+                <p>Pine Martin</p>
               </div>
               <div class="profile-panel-feature">
                 <picture>
                   <img src="../../../assets/profile/download.svg" alt="">
                 </picture>
-                <p>HOUSE</p>
-                <p>Gryffindor</p>
+                <p>WAND</p>
+                <p>{{this.userDetails?.wand}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="content">
-        <div class="things-todo">
+        <!-- <div class="things-todo">
           Things to do
-          <a class="things-todo-box">
-            <p>Find our secret words and unlock exclusive Portrait Maker Goodies</p>
+          <a *ngFor="let item of thingsTodo" class="things-todo-box" [routerLink]="[item.url]" routerLinkActive="router-link-active" [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),url(' + item.imageUrl + ')'}">
+            <p>{{item.title}}</p>
           </a>
-          <a class="things-todo-box">
-            <p>Find our secret words and unlock exclusive Portrait Maker Goodies</p>
-          </a>
-          <a class="things-todo-box">
-            <p>Find our secret words and unlock exclusive Portrait Maker Goodies</p>
-          </a>
-          <a class="things-todo-box">
-            <p>Find our secret words and unlock exclusive Portrait Maker Goodies</p>
-          </a>
-        </div>
+        </div> -->
         <div class="starter-pack">
           <ion-row>
-            <ion-col sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12">
-              <a class="things-todo-box">
-                <p>Which Gryffindor are you most like</p>
-              </a>
-            </ion-col>
-            <ion-col sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12">
-              <a class="things-todo-box">
-                <p>Which Gryffindor are you most like</p>
-              </a>
-            </ion-col>
-            <ion-col sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12">
-              <a class="things-todo-box">
-                <p>Which Gryffindor are you most like</p>
-              </a>
-            </ion-col>
-            <ion-col sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12">
-              <a class="things-todo-box">
-                <p>Which Gryffindor are you most like</p>
-              </a>
+            <ion-col sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12" class="things-todo-box" *ngFor="let item of houseSecrets"  [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),url(' + item.imageUrl + ')'}">
+                <p>{{item.title}}</p>
             </ion-col>
           </ion-row>
         </div>

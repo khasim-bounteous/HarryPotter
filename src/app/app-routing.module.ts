@@ -41,11 +41,13 @@ const routes: Routes = [
   },
   {
     path: 'sorting-hat',
-    loadChildren: () => import('./pages/sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule)
+    loadChildren: () => import('./pages/sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'wand',
-    loadChildren: () => import('./pages/wand/wand.module').then( m => m.WandPageModule)
+    loadChildren: () => import('./pages/wand/wand.module').then( m => m.WandPageModule),
+    canActivate: [AuthGuard]
   },  
   {
     path: '**',

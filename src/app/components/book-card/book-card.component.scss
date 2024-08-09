@@ -1,8 +1,12 @@
-.card-image{
-    height: 25rem;
-    border-radius:10px;
-}
-
-.card-title{
+.card {
     text-align: center;
+    padding: 5px;
+    &-image {
+        height: 25rem;
+        border-radius: 10px;
+    }
+
+    &-title{
+        padding: 0px 2px;
+    }
 }

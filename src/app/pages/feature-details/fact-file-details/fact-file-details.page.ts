@@ -12,7 +12,9 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class FactFileDetailsPage implements OnInit {
 
 
-  factFile !: FactFile
+  factFile !: FactFile | null
+  searchTerm: string = ''
+
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +26,15 @@ export class FactFileDetailsPage implements OnInit {
       const id = this.route.snapshot.paramMap.get('id') as string;
       
       this.firebaseService.getFactfile(id).subscribe((data)=>{
-        this.factFile = data
-        console.log(data)
+        this.factFile = data.data != null ? data : null
       })
+    }
+
+    onSearch(){
+      if(this.searchTerm.trim())
+        this.firebaseService.getFactfiles("all",null,this.searchTerm.trim()).subscribe(data=>{
+          this.factFile = data.length >0 ? data[0] : null
+        })
     }
 
 }

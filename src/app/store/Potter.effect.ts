@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { EMPTY, catchError, exhaustMap, map, of, switchMap, tap, withLatestFrom } from "rxjs";
+import { EMPTY, catchError, exhaustMap, from, map, of, switchMap, tap, withLatestFrom } from "rxjs";
 import { FirebaseService } from "../services/firebase.service";
-import { LOAD_FACTFILES, loadFactFiles, loadFactFilesSuccess } from "./Potter.action";
+import { LOAD_FACTFILES, LOAD_USER_DETAILS, loadFactFiles, loadFactFilesSuccess, loadUserDetailsSuccess } from "./Potter.action";
 import { Store } from "@ngrx/store";
 import {FactFiles } from "../interface/fact-file";
 import { getFactFileLastKey } from "./Potter.selector";
+import { UserDetails } from "../interface/userauth";
+import { FirebaesAuthService } from "../services/firebaes-auth.service";
 
 @Injectable()
 export class PotterEffect{
@@ -13,7 +15,8 @@ export class PotterEffect{
     constructor(
         private actions$: Actions,
         private potterService: FirebaseService,
-        private store: Store<FactFiles>
+        private firebaseService: FirebaesAuthService,
+        private store: Store<{FactFiles:FactFiles,userDetails: UserDetails}>
     ){}
 
     _factFiles = createEffect(() => {
@@ -27,6 +30,18 @@ export class PotterEffect{
             return this.potterService.getFactfiles(category,lastKey,searchTerm).pipe(
               map((data) => loadFactFilesSuccess({ factFiles: data,searchTerm: searchTerm })),
               catchError(() => EMPTY)
+            );
+          })
+        );
+      });
+
+      _loadUserDetails$ = createEffect(() => {
+        return this.actions$.pipe(
+          ofType(LOAD_USER_DETAILS),
+          switchMap(() => {
+            return from(this.firebaseService.getUserDetails()).pipe(
+              map((userDetails: UserDetails) => loadUserDetailsSuccess({ userDetails })),
+              catchError(error => of({ type: '[User] Load User Details Failure', error })) // Handle error appropriately
             );
           })
         );

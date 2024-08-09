@@ -5,11 +5,15 @@ import { Book } from '../interface/book';
 import { FactFile } from '../interface/fact-file';
 import { JkOriginal } from '../interface/jk-original';
 import { MagicalNews } from '../interface/magical-news';
+import { Category, CategoryData } from '../interface/category';
   
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
+  getUserDetails() {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(private db: AngularFireDatabase) {}
   getBooks(): Observable<Book[]> {
@@ -212,6 +216,18 @@ export class FirebaseService {
     );
   }
 
+  getCharacterCategories(): Observable<Category[]> {
+    return this.db.list('/filters').snapshotChanges().pipe(
+      map(actions => 
+        actions.map(action => {
+          const key = action.payload.key;
+          const data = action.payload.val() as CategoryData;
+          return { key, data } as Category
+        })
+      )
+    );
+  }
+  
 
   addItem(item: any) {
     this.db.list('/tem').push(item);

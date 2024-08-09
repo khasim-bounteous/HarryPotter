@@ -97,8 +97,7 @@ ion-content {
     height: 98px;
     width: 88px;
     text-align: center;
-    font-size: 9.72px;
-
+    font-size: .55rem;
     &-frame {
         background-clip: border-box;
         background-color: rgba(0, 0, 0, 0);
@@ -179,42 +178,53 @@ ion-content {
 .fact-file-filter-container {
     display: flex;
     gap: 0px 15px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+    margin-bottom: 30px;
     /* Ensures items wrap */
 }
 
 .filter-box {
     height: 170px;
     background-color: rgb(28, 30, 39);
-    padding: 5px;
     border-radius: 5px;
     box-sizing: border-box;
-    color: rgb(209, 176, 125);
     cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-basis: 0%;
     flex-grow: 1;
     flex-shrink: 1;
-    font-family: "Sofia Pro", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 24px;
-    position: relative;
-    text-align: center;
-    transition: transform 0.2s ease;
+    line-height: 22px;
+    padding: 7px;
+    
+    &-con{
+        padding: 15px 4px 10px 4px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid;
+        &:hover {
+            border: 3px solid white
+        }
+    }
+    &-inner{
+        font-size: .8rem;
+        text-align: center;
+        // padding: 2px;
+        p{
+            padding: 0px 5px;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+
 }
 
-.filter-box-inner{
-}
 
 .filter-icon{
     height: 70px;
     width: auto;
-    margin-bottom: 10px;
-    color: rgb(150, 135, 197);
-    // color: rgb(150, 135, 197)
+    // margin: 5px;    // color: rgb(150, 135, 197)
 }
 
   
@@ -259,9 +269,23 @@ ion-content {
             -webkit-line-clamp: 2
         }
     }
+    .fact-file-filter-container{
+        gap: 0px 10px;
+    }
+    .filter-box-con{
+        padding: 10px 4px 10px 4px;
+        
+    }
+    .filter-box-inner{
+        font-size: .7rem;
+        p{
+            padding: 0px 2px;
+            text-align: center;
+        }
+    }
 }
 
-@media (max-width:768px) {
+@media (max-width:780px) {
 
     .featured-image-container {
         height: 250px;
@@ -287,6 +311,7 @@ ion-content {
 
 
 @media (max-width:570px) {
+    
     .fact-file-header {
         height: 225px;
     }
@@ -320,8 +345,16 @@ ion-content {
     }
     .filter-box {
         flex-basis: 20%;
-        height: 125px;
+        height: 110px;
         font-size: 16px;
         line-height: 18px;
+
+        &-inner{
+            font-size: .6rem;
+            p{
+                padding: 0px 2px;
+                text-align: center;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@
     </div>
 
     <div class="fact-file-content-container">
-      <a href="" class="featured-anchor-file">
+      <a href="/menu/fact-files/-O3YQOynb5hpEuaeTEB7" class="featured-anchor-file">
         <div class="featured-anchor-file-root">
           <div class="featured-badge">
             <div class="featured-badge-frame"></div>
@@ -35,12 +35,14 @@
         </div>
       </a>
       <div class="fact-file-divider"></div>
-      <div class="fact-file-filter-container">
-        <div *ngFor="let item of factFilter" (click)="getFactFilesByCategory(item.filter)" class="filter-box">
-          <!-- Content for filter box goes here -->
-           <div class="filter-box-inner">
-              <img class="filter-icon" src="../../../assets/fact-files/{{item.filter_img}}" alt="">
-              <div>{{item.filter}}</div>
+      <div class="fact-file-filter-container" *ngIf="factFilter$ | async as factFilter">
+        <div *ngFor="let filter of factFilter" (click)="getFactFilesByCategory(filter.data.filter)"  class="filter-box">
+           <div class="filter-box-con" [ngStyle]="category===filter.data.filter ? {'border':'2px solid #ffffffde'}: {'border-color': filter.data.color}">
+              <div class="filter-box-inner ">
+                <div class="filter-box-badge"></div>
+                <img class="filter-icon" src="../../../assets/fact-files/{{filter.data.filter_img}}" alt="">
+                <p [ngStyle]="{'color': filter.data.color}">{{filter.data.name| uppercase}}</p>
+            </div>
            </div>
         </div>
       </div>
