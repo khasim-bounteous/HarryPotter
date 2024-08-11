@@ -6,6 +6,7 @@ import { FactFile } from '../interface/fact-file';
 import { JkOriginal } from '../interface/jk-original';
 import { MagicalNews } from '../interface/magical-news';
 import { Category, CategoryData } from '../interface/category';
+import { ProfileContent } from '../interface/profileContent';
   
 @Injectable({
   providedIn: 'root'
@@ -227,6 +228,19 @@ export class FirebaseService {
       )
     );
   }
+
+  getProfileContent():Observable<ProfileContent[]> {
+    console.log("")
+    return this.db.list('/profileContent').snapshotChanges().pipe(
+      map(actions =>
+        actions.map(a => {
+          const key = a.payload.key;  
+          const data = a.payload.val() as ProfileContent['data']
+          return { key,data } as ProfileContent
+        })
+      )
+    );
+  }
   
 
   addItem(item: any) {
@@ -235,7 +249,7 @@ export class FirebaseService {
 
 
   addData(filters: any[]): void {
-    const itemsRef = this.db.list('/magical_miscellany'); 
+    const itemsRef = this.db.list('/profileContent'); 
     filters.forEach(filter => {
       itemsRef.push(filter); 
     });

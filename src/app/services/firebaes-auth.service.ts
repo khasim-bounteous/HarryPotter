@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { from, Observable, switchMap } from 'rxjs';
-import { Database, ref, set, get } from '@angular/fire/database';
+import { Database, ref, set, get, update } from '@angular/fire/database';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 
 @Injectable({
@@ -20,7 +20,14 @@ export class FirebaesAuthService {
     const user = this.getUser();
     if (user) {
       const userRef = ref(this.db, `users/${user.uid}`);
-      await set(userRef, { house }); 
+      await update(userRef, { house }); 
+    }
+  }
+  async addWandToUserProfile(wand: string | null): Promise<void> {
+    const user = this.getUser();
+    if (user) {
+      const userRef = ref(this.db, `users/${user.uid}`);
+      await update(userRef, { wand }); 
     }
   }
   signup(signupData: { email: string, password: string, firstName: string, lastName: string }): Observable<any> {
@@ -76,4 +83,6 @@ export class FirebaesAuthService {
     }
     return null;
   }
+
+  
 }

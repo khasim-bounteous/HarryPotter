@@ -148,7 +148,7 @@ export class WandPage implements OnInit {
     }
     if (this.wand) {
       console.log(this.wand)
-      this.firebaseAuthService.addHouseToUserProfile(this.wand);
+      this.firebaseAuthService.addWandToUserProfile(this.wand);
     }
   }
 
