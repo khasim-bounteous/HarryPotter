@@ -1,4 +1,4 @@
-.login-main {
+.root{
     color: white;
     &::before{
         content: "";
@@ -12,6 +12,12 @@
         background-size: cover;
         z-index: -1; 
     }
+
+    &-inner{
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 10px 50px;
+    }
 }
 
 .login-form{
@@ -22,8 +28,8 @@
         margin-bottom: 20px;
     }
     &-label {
-        font-family: Sofia Pro, Helvetica, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
-        font-size: 12px;
+        font-weight: bold;
+        font-size: 13px;
     }
     &-name{
         display: flex;
@@ -50,12 +56,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
 
-    h1{
-        font-family: Bluu Next, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, Osaka, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, serif;
-        font-size: 40px;
-        padding-bottom: 10px;
+        h1{
+            font-size: 40px;
+            padding-bottom: 20px;
+        }
     }
 
     &-logo{
@@ -65,8 +70,8 @@
         margin-bottom: 20px;
 
         ion-img{
-            height: 120px;
-            width: 150px;
+            height: 100px;
+            width: auto;
         }
     }
 
