@@ -73,7 +73,79 @@ export class TemPage implements OnInit {
         imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/5SN4pqORtsdOWbqniqja06/b53f6ea8d22a021ccfb5215901c8eacb/the-sword-of-gryffindor_1_1800x1248.png?h=416&w=600&fit=pad',
         url: '/menu/fact-files/-O3YQXkq3ImdzXHnU7jZ',
         category: "Gryffindor"
-      }
+      },
+      {
+        title: 'Slytherin',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/4HoZaEXbZFJDvu3c3KfaQW/d31cd135bd0c209c7da9ef48ad557311/slytherin-crest-web-fact-file-images.jpg?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YRKSiATWqUebHsiHN',
+        category: "Slytherin"
+      },
+      {
+        title: 'Salazar Slytherin',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/75WJtg1xvq6iaeVJNJ9nDc/e797b43a0a83a8e99b79456143b9ac6e/salazar-slytherin_1_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQOzNCECry5_nkagm',
+        category: "Slytherin"
+      },
+      {
+        title: 'The Slytherin common room',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/7xvjjnk3ohlMXpKfQ5XxUs/48b84a7470b321832a4602324d807f8c/the-slytherin-common-room_3_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQgc2SG9jZxTpE9X4',
+        category: "Slytherin"
+      },
+      {
+        title: 'The Chamber of Secrets',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/2f18k2B1X7OIMEvvsfKLlS/7c9455c64f2045c5702ee63a095f38d2/fact-file-hero-chamber-of-secrets-hp-f2-harry.jpg?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQgc-EHM0qxs831z5',
+        category: "Slytherin"
+      },
+      {
+        title: 'Hufflepuff',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/1GHlvnfWeIgrFMUdSmLiS5/4d5edf0b1f84866c5f20d96a53faf623/hufflepuff-crest-web-fact-file-images.jpg?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YRKSf5ewPWI-EZbxp',
+        category: "Hufflepuf"
+      },
+      {
+        title: 'Helga Hufflepuff',
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/2yh79uYqFiYP4mv7bnJMjm/d731818f70d8e23681633f4eba9bc60d/helga-hufflepuff_1_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQOyvfP0vEamMNgt4',
+        category: "Hufflepuf"
+      },
+      {
+        title: "Hufflepuff's cup",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/3J0qZBPE3zaLMRSSGjAuGE/d2cdf3da0b8eed9affd4ab347b454c46/hufflepuffs-cup_1_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQXkhOEVhCs5STqtk',
+        category: "Hufflepuf"
+      },
+      {
+        title: "The Hufflepuff common room",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/7KzzNMFOrRUu6yiqwsbwv7/bebfd297deead4c73c32896974f36f76/the-hufflepuff-common-room_2_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQgc15Cn-d8P9U-QK',
+        category: "Hufflepuf"
+      },
+      {
+        title: "Ravenclaw",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/p0d3jvLt7ndev0IPLLjBN/ed400804b0b89dfe58a965f592b12553/ravenclaw-crest-web-fact-file-image.jpg?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YRKSh6HM4n_U5kQ3s',
+        category: "Ravenclaw"
+      },
+      {
+        title: "Rowena Ravenclaw",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/1O2LdPUz8m6Jh14UZrUIeC/399eb5f15969110341f2815f524bca3d/rowena-ravenclaw_1_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQOzMwPMO0p8KfjXL',
+        category: "Ravenclaw"
+      },
+      {
+        title: "Ravenclaw's diadem",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/4phhDQX4zy7U4yLlSVzjAB/be5f2253346f4a3045e494f8752eeb43/ravenclaws-diadem_1_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQXkk9g7XQH4-Dewf',
+        category: "Ravenclaw"
+      },
+      {
+        title: "The Ravenclaw common room",
+        imageUrl: 'https://images.ctfassets.net/usf1vwtuqyxm/1VEhY2hYfsBVXvnjC3kD0u/44fc853f78aad66546b23497b87f4d63/the-ravenclaw-common-room_2_1800x1248.png?h=416&w=600&fit=pad',
+        url: '/menu/fact-files/-O3YQgc2SG9jZxTpE9X0',
+        category: "Ravenclaw"
+      },
   ]
   ngOnInit() {
     this.firebaseService.getBooks().subscribe(data=>console.log(data))

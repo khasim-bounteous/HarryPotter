@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { from, Observable, switchMap } from 'rxjs';
 import { Database, ref, set, get, update } from '@angular/fire/database';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class FirebaesAuthService {
   constructor(
     private auth: Auth,
     private db: Database,
-    private firestore: Firestore
+    private firestore: Firestore,
+    private router: Router
   ) {}
 
   async addHouseToUserProfile(house: string | null): Promise<void> {
@@ -40,9 +42,9 @@ export class FirebaesAuthService {
           email: signupData.email,
           firstName: signupData.firstName,
           lastName: signupData.lastName,
-          house: '',
-          wand: '',
-          avatar: ''
+          house: null,
+          wand: null,
+          avatar: null
         }));
       })
     );
@@ -53,7 +55,7 @@ export class FirebaesAuthService {
   }
 
   logout(){
-     signOut(this.auth)
+     signOut(this.auth).then(()=>this.router.navigate(['/login']))
   }
 
   getUser(): any {

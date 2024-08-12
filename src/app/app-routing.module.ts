@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NotFoundPage } from './pages/not-found/not-found.page';
 import { AuthGuard } from './guards/auth-guard.guard';
 import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate} from '@angular/fire/auth-guard';
+import { sortingHatGuard } from './guards/sorting-hat.guard';
+import { wandGuard } from './guards/wand.guard';
  
 const redirectUnauthorizedToLogIn = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['/menu/home']);
@@ -16,7 +18,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    ...canActivate(redirectLoggedInToHome)
+    // ...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'forgot-password',
@@ -42,12 +44,12 @@ const routes: Routes = [
   {
     path: 'sorting-hat',
     loadChildren: () => import('./pages/sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule),
-    // canActivate: [AuthGuard]
+    canActivate: [sortingHatGuard]
   },
   {
     path: 'wand',
     loadChildren: () => import('./pages/wand/wand.module').then( m => m.WandPageModule),
-    // canActivate: [AuthGuard]
+    canActivate: [wandGuard]
   },  
   {
     path: '**',

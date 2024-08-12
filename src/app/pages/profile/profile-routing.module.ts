@@ -2,17 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProfilePage } from './profile.page';
+import { SettingsComponent } from './settings/settings.component';
+import { ThingsTodoComponent } from './things-todo/things-todo.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProfilePage
+    component: ProfilePage,
+    children: [
+      {
+        path: '',
+        component: ThingsTodoComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+    ]
   },
-  {
-
-    path: 'settings',
-    loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
-  }
 ];
 
 @NgModule({

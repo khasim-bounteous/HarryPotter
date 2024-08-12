@@ -1,0 +1,112 @@
+.root{
+    padding: 20px 40px;
+}
+  
+.setting-icon{
+    
+    display: block;
+    text-align: end;
+    ion-icon{
+        padding-right: 10px;
+        padding-top: 10px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+}
+.things-todo {
+    &-box {
+        cursor: pointer;
+        height: 180px;
+        width: 100%;
+        // background-image:   linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),   url('https://images.ctfassets.net/usf1vwtuqyxm/1UUKeJuRhDzrDKA4f6AOAE/5d7a23ffabbef5cde0c2ec0334781b78/Web_Profile_PromoTile.png?w=1320&h=743&fit=fill&f=top&fm=webp&q=50');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        text-align: center;
+
+        p {
+            text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+            max-width: 50%;
+            font-size: 1.3rem;
+            line-height: 2.3rem;
+        }
+
+        // &:hover {
+        //     background-size: 110%;
+        // }
+    }
+}
+
+.starter-pack {
+    
+    .things-todo-box {
+        font-weight: 400;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        p {
+            
+            text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+            max-width: 50%;
+            font-size: 1rem;
+            line-height: 1.3rem;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+
+    .root{
+        height: fit-content;
+        padding: 10px;
+    }
+
+    .profile{
+        padding-top: 10px;
+    }
+    .root-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-picture {
+        img {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    .things-todo p {
+        text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+        text-shadow: rgb(0, 0, 0) 2px 2px 4px;
+        max-width: 70%;
+        font-size: .85rem;
+        line-height: 1.5rem;
+    }
+
+
+    .content {
+        width: 100%;
+        padding: 20px 15px;
+        overflow-y:scroll
+    }
+
+    .things-todo {
+        &-box {
+            margin: 10px 0px;
+        }
+    }
+    
+   
+}

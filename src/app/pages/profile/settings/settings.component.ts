@@ -4,12 +4,10 @@ import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
 
 @Component({
   selector: 'app-settings',
-  templateUrl: './settings.page.html',
-  styleUrls: ['./settings.page.scss'],
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss'],
 })
-export class SettingsPage implements OnInit {
-
-
+export class SettingsComponent  implements OnInit {
   constructor(
     private firebaseAuthService: FirebaesAuthService
   ) { }
@@ -18,7 +16,6 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
     this.firebaseAuthService.getUserDetails().then(user=>{
       this.userDetails = user;
-      console.log(this.userDetails)
     })
   }
 }

@@ -1,0 +1,21 @@
+<div class="root">
+  <div class="setting-icon">
+    <ion-icon routerLink="/menu/profile/settings" name="settings"></ion-icon>
+  </div>
+  <div class="things-todo">
+    <h1>Things to do</h1>
+    <a *ngFor="let item of thingsTodo" class="things-todo-box" [routerLink]="[item.data.url]" routerLinkActive="router-link-active" [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),url(' + item.data.imageUrl + ')'}">
+      <p>{{item.data.title}}</p>
+    </a>
+  </div>
+  <div class="starter-pack">
+    <h1>The {{userDetails?.house}} secrets</h1>
+    <ion-row>
+      <ion-col *ngFor="let item of houseSecrets" sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12"  >
+        <a [routerLink]="[item.data.url]" routerLinkActive="router-link-active"  class="things-todo-box" [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),url(' + item.data.imageUrl + ')'}">
+          <p>{{item.data.title}}</p>
+        </a>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

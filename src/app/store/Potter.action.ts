@@ -10,6 +10,9 @@ import { UserDetails } from "../interface/userauth";
 
     export const loadFactFiles = createAction(LOAD_FACTFILES,props<{category: string,searchTerm:string | null}>())
     export const loadFactFilesSuccess = createAction(LAOD_FACTFILES_SUCCESS,props<{factFiles: FactFile[],searchTerm:string | null}>());
+    export const resetFactFiles = createAction('[FactFiles] Reset')
+    
     export const loadUserDetails = createAction(LOAD_USER_DETAILS)
     export const loadUserDetailsSuccess = createAction(LOAD_USER_DETAILS_SUSCCESS,props<{userDetails: UserDetails}>());
-    export const resectFactFiles = createAction('[FactFiles] Reset')
+    export const resetUserDetails = createAction('[UserDetails] Reset')
+    

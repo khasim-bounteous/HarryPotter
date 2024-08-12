@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { loadUserDetails } from 'src/app/store/Potter.action';
 
 interface WandQuestion {
   text: string;
@@ -21,7 +25,9 @@ export class WandPage implements OnInit {
   currentQuestionIndex: number = 0;
 
   constructor(
-    private firebaseAuthService: FirebaesAuthService
+    private firebaseAuthService: FirebaesAuthService,
+    private store: Store<UserDetails>,
+    private router: Router
   ) { }
   ngOnInit() {
   }
@@ -147,8 +153,11 @@ export class WandPage implements OnInit {
       }
     }
     if (this.wand) {
-      console.log(this.wand)
-      this.firebaseAuthService.addWandToUserProfile(this.wand);
+      this.firebaseAuthService.addWandToUserProfile(this.wand).then(()=>{
+        this.store.dispatch(loadUserDetails())
+      })
+      this.router.navigate(['/menu/profile'])
+      
     }
   }
 

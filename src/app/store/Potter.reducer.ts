@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { FactFileState, UserState } from "./Potter.state";
-import { loadFactFiles, loadFactFilesSuccess, loadUserDetailsSuccess, resectFactFiles } from "./Potter.action";
+import { loadFactFiles, loadFactFilesSuccess, loadUserDetailsSuccess, resetFactFiles, resetUserDetails } from "./Potter.action";
 
 const _factFileReducer = createReducer(
     FactFileState,
@@ -19,7 +19,7 @@ const _factFileReducer = createReducer(
             error: null
         }
     }),
-    on(resectFactFiles,(state)=>{
+    on(resetFactFiles,(state)=>{
         return{
             ...state,
             factfiles: [],
@@ -42,6 +42,17 @@ const _userDetailsReducer = createReducer(
             house : userDetails.house,
             wand : userDetails.wand,
             avatar : userDetails.avatar
+        }
+    }),
+    on(resetUserDetails,(state)=>{
+        return {
+            email: null,
+            firstName: null,
+            lastName: null,
+            uid: null,
+            house : null,
+            wand : null,
+            avatar : null,
         }
     })
 )

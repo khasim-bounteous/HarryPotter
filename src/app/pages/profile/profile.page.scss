@@ -1,24 +1,18 @@
 .root {
     height: 100vh;
     overflow: hidden;
-    &-container {
-        display: flex;
-        height: 100%;
-    }
+    background-image: url('https://www.wizardingworld.com/images/pages/profile/house-backgrounds/gryffindor-background-2200.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
 
-    &-bg{
-        background-image: url('https://www.wizardingworld.com/images/pages/profile/house-backgrounds/gryffindor-background-2200.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
+    &-container {
+      display: flex;
+      height: 100%;
+      position: relative; // Add this line to position the background absolutely within this container
     }
-}
+  }
 
 .profile {
     flex-basis: 35%;
@@ -52,89 +46,26 @@
         justify-content: center;
         gap: 30px;
         text-align: center;
+
+        &-feature{
+            img{
+                cursor: pointer;
+            }
+        }
     }
 }
 
 .content {
     flex-basis: 65%;
-    padding: 40px 80px;
     overflow-y: auto;
     scrollbar-width: none;
-    /* For Firefox */
     position: relative;
     -ms-overflow-style: none;
-    /* For Internet Explorer and Edge */
     &::-webkit-scrollbar {
         display: none;
-        /* For Chrome, Safari, and Opera */
     }
 }
 
-.setting-icon{
-    // position: fixed;
-    // top: 15px;
-    display: block;
-    text-align: end;
-    // right: 10px;
-    ion-icon{
-        padding-right: 30px;
-        padding-top: 10px;
-        height: 30px;
-        width: 30px;
-        cursor: pointer;
-    }
-}
-
-.things-todo {
-    &-box {
-        cursor: pointer;
-        height: 180px;
-        // background-image:   linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342)),   url('https://images.ctfassets.net/usf1vwtuqyxm/1UUKeJuRhDzrDKA4f6AOAE/5d7a23ffabbef5cde0c2ec0334781b78/Web_Profile_PromoTile.png?w=1320&h=743&fit=fill&f=top&fm=webp&q=50');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 24px;
-        text-decoration: none;
-        color: white;
-        margin: 10px;
-        text-align: center;
-
-        p {
-            text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-            max-width: 50%;
-            font-size: 1.3rem;
-            line-height: 2.3rem;
-        }
-
-        // &:hover {
-        //     background-size: 110%;
-        // }
-    }
-}
-
-.starter-pack {
-    
-    .things-todo-box {
-        font-weight: 400;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-
-        p {
-            
-            text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-            max-width: 50%;
-            font-size: 1rem;
-            line-height: 1.3rem;
-        }
-    }
-}
 
 @media (max-width: 900px) {
 
@@ -156,27 +87,9 @@
             width: 300px;
         }
     }
-
-    .things-todo p {
-        text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-        text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-        max-width: 70%;
-        font-size: .85rem;
-        line-height: 1.5rem;
-    }
-
-
     .content {
         width: 100%;
-        padding: 20px 15px;
         overflow-y:scroll
     }
-
-    .things-todo {
-        &-box {
-            margin: 10px 0px;
-        }
-    }
-    
    
 }

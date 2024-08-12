@@ -229,18 +229,20 @@ export class FirebaseService {
     );
   }
 
-  getProfileContent():Observable<ProfileContent[]> {
-    console.log("")
-    return this.db.list('/profileContent').snapshotChanges().pipe(
+  getProfileContent(category: string | null): Observable<ProfileContent[]> {
+    return this.db.list('/profileContent', ref => 
+      ref.orderByChild('category').equalTo(category)
+    ).snapshotChanges().pipe(
       map(actions =>
         actions.map(a => {
-          const key = a.payload.key;  
-          const data = a.payload.val() as ProfileContent['data']
-          return { key,data } as ProfileContent
+          const key = a.payload.key;
+          const data = a.payload.val() as ProfileContent['data'];
+          return { key, data } as ProfileContent;
         })
       )
     );
   }
+  
   
 
   addItem(item: any) {

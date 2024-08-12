@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { loadUserDetails } from 'src/app/store/Potter.action';
 
 interface WandQuestion {
   text: string;
@@ -17,7 +21,9 @@ interface WandQuestion {
 export class SortingHatPage implements OnInit {
 
   constructor(
-    private firebaseAuthService: FirebaesAuthService
+    private firebaseAuthService: FirebaesAuthService,
+    private store: Store<UserDetails>,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -148,8 +154,10 @@ export class SortingHatPage implements OnInit {
       }
     }
     if (this.house) {
-      console.log(this.house)
-      this.firebaseAuthService.addHouseToUserProfile(this.house);
+      this.firebaseAuthService.addHouseToUserProfile(this.house).then(()=>{
+        this.store.dispatch(loadUserDetails())
+      })
+      this.router.navigate(['/menu/profile'])
     }
   }
 

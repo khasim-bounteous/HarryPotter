@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { Store } from '@ngrx/store';
+import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { UserauthService } from 'src/app/services/userauth.service';
+import { loadUserDetails } from 'src/app/store/Potter.action';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +20,7 @@ export class LoginPage implements OnInit {
     private authService: UserauthService,
     private firebaseAuthService: FirebaesAuthService,
     private toastService: ToastService,
+    private store : Store<UserDetails>,
     private router: Router
   ) { }
 
@@ -38,6 +42,7 @@ export class LoginPage implements OnInit {
       this.firebaseAuthService.login(loginData).subscribe(data=>{
           this.toastService.presentToast('Login successful!');
           this.loginForm.reset()
+          this.store.dispatch(loadUserDetails())
           this.router.navigate(['/menu/home']);
       })
       // this.authService.userLogin(loginData).subscribe({

@@ -1,0 +1,88 @@
+.root {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.342));
+    background-size: cover;
+    background-position: center center;
+    padding: 20px 40px;
+    &-container {
+        display: flex;
+        height: 100%;
+    }
+}
+
+
+.settings {
+    h1{
+        font-size: 2.5rem;
+    }
+
+    &-header{
+        margin: 50px 0px;
+    }
+    &-con-box{
+        margin: 50px 0px;
+        small{
+            font-size: 1.3rem;
+            margin: 10px;
+        }
+        p{
+            margin: 10px;
+            font-size: 2rem;
+        }
+    }
+}
+
+hr{
+    height:  1px;
+}
+.close-icon{
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    cursor: pointer;
+    ion-icon{
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .root{
+        padding: 20px;
+    }
+    .settings {
+        h1{
+            font-size: 1.5rem;
+        }
+        width: 100%;
+        padding: 0px;
+        overflow-y:scroll
+    }
+
+    .settings-con-box{
+        margin: 50px 0px;
+        small{
+            font-size: 1rem;
+            margin: 10px;
+        }
+        p{
+            margin: 10px;
+            font-size: 1.3rem;
+        }
+    }
+   
+    .close-icon{
+        position: absolute;
+        top: 15px;
+        right: 5px;
+        cursor: pointer;
+        ion-icon{
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+        }
+    }
+}
