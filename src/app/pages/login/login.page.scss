@@ -1,6 +1,7 @@
-.root{
+.root {
     color: white;
-    &::before{
+
+    &::before {
         content: "";
         position: fixed;
         top: 0;
@@ -10,35 +11,39 @@
         background: url('../../../assets/signup_bg.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: -1; 
+        z-index: -1;
     }
 
-    &-inner{
+    &-inner {
         max-width: 500px;
         margin: 40px auto;
         padding: 10px 40px;
     }
 }
 
-.login-form{
+.login-form {
     &-input {
         margin-top: 12px;
     }
+
     &-div {
         margin-bottom: 20px;
     }
+
     &-label {
         font-weight: bold;
         font-size: 13px;
     }
-    &-name{
+
+    &-name {
         display: flex;
         justify-content: center;
-        div{
+
+        div {
             width: 48%
         }
 
-        div+div{
+        div+div {
             width: 48%;
             margin-left: 4%;
         }
@@ -46,9 +51,10 @@
 }
 
 
-.auth-header{
+.auth-header {
     margin: 20px 0px;
-    &-con{
+
+    &-con {
         position: relative;
         max-width: 500px;
         padding: 0px;
@@ -57,30 +63,30 @@
         align-items: center;
         justify-content: center;
 
-        h1{
-            font-size: 3rem;
+        h1 {
+            font-size: 3em;
             padding-bottom: 20px;
         }
     }
 
-    &-logo{
+    &-logo {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
 
-        ion-img{
+        ion-img {
             height: 100px;
             width: auto;
         }
     }
 
-    &-des{
+    &-des {
         margin: 10px 0px
     }
 }
 
-hr{
+hr {
     flex: 1 1;
     height: 1px;
     background-color: #696b78;
@@ -88,21 +94,21 @@ hr{
     margin: 10px 0px;
 }
 
-.auth-diamond{
+.auth-diamond {
     height: 16px;
     width: 32px;
     background-image: url(https://www.wizardingworld.com/images/icons/diamonds.svg);
-    color: rgb(255, 255, 255);   
+    color: rgb(255, 255, 255);
     margin: 0 10px;
 }
 
-.login-form-buttons{
-    button{
+.login-form-buttons {
+    button {
         margin-top: 20px;
     }
 }
 
-.login-button{
+.login-button {
     width: 100%;
     padding: 2px 4px;
     color: #fff;
@@ -114,14 +120,14 @@ hr{
     font-weight: bold;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
         background-color: #443e87;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 }
 
 
-.signup-button{
+.signup-button {
     width: 100%;
     padding: 2px 4px;
     color: #fff;
@@ -135,23 +141,32 @@ hr{
     border: 1px solid white;
     margin: 10px 0px;
 
-    &:hover{
+    &:hover {
         background-color: white;
         color: black;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 }
 
-.auth-footer{
+.auth-footer {
     margin: 35px 0px;
     text-align: center;
 
-    h1{
+    h1 {
         margin: 30px 0px;
     }
 }
 
 
+@media (max-width: 767px) {
+    .auth-header {
 
+        &-con {
+            h1 {
+                font-size: 2rem;
+                padding-bottom: 20px;
+            }
+        }
+    }
 
-
+}
