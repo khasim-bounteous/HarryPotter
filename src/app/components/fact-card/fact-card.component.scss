@@ -20,7 +20,7 @@
   
   .fact-title {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: 700;
     padding: 20px;
   }
@@ -46,5 +46,14 @@
         background-repeat: no-repeat;
         background-position: 50%;
         background-color: inherit;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .fact-title {
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 20px 10px;
     }
   }
