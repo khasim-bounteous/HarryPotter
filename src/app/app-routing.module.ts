@@ -23,7 +23,6 @@ const routes: Routes = [
   {
     path: 'sorting-hat',
     loadChildren: () => import('./pages/sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule),
-    canActivate: [sortingHatGuard]
   },
   {
     path: 'wand',

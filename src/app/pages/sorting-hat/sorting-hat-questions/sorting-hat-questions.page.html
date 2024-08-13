@@ -1,0 +1,32 @@
+<ion-content>
+  <!-- <div *ngIf="currentQuestionIndex < questions.length"> -->
+    <div class="root">
+      <nav class="nav">
+        <ion-row class="">
+          <ion-col size="2">
+          </ion-col>
+          <ion-col size="8" class="nav-center">
+            <img class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
+          </ion-col>
+        </ion-row> 
+      </nav>
+      <div *ngIf="house === null" class="question-container">
+        <div class="question-content">
+          <div class="bg-img" [ngStyle]="{ 'background-image': 'url(' + currentQuestion.bgImage + ')' }"></div>
+          <p class="question">{{ questions[currentQuestionIndex].text }}</p>
+          <swiper-container  [spaceBetween]="10"  [slidesPerView]="1"  [navigation]="true">
+            <swiper-slide *ngFor="let option of questions[currentQuestionIndex].options">
+              <div class="option-container">
+                <div class="image-container"[ngStyle]="{'background-color': currentQuestion.color}">
+                  <div class="image-container-frame" [ngStyle]="{'background-image': 'url(' + currentQuestion.frame + ')' }"></div>
+                  <img [src]="option.image"  />
+                </div>
+                <p>{{ option.answer }}</p>
+                <button fill="outerline" (click)="selectAnswer(option.house)">SELECT</button>
+              </div>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div> 
+  </div>
+</ion-content>

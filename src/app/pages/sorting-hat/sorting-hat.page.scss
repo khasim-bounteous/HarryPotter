@@ -1,176 +1,114 @@
-.bg-img{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
-}
-.nav{
-    background-color: transparent;
-    padding: 20px 10px 0px 10px;
-    color: #22D3EE;
-    font-weight: bold;
-    z-index: 100;
+.root {
     position: relative;
-    &-start{
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        gap: 10px;
-        h3{
-            font-weight: inherit;
-        }
-        a{
-            cursor: pointer;
-            text-decoration: none;
-        }
-    }
-    &-center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        ion-button{
-            font-weight: inherit;
-            cursor: pointer;
-            color: inherit;
-        }
-    }
+    z-index: 1; /* Ensures the content is above the background */
 
-    &-end{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 0px 20px;
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://www.wizardingworld.com/assets/_next/static/images/bg-6dd8ce6d2cc0ea675ee586519be7270d.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1; /* Places the background behind the root content */
     }
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+
+    &-header{
+        display: none;
+    }
+}
+
+.hat{
+    flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
     &-logo{
-        // border-radius: 50%;
-        height: 60px;
-        width: fit-content
+        padding: 40px;
     }
 }
-
-.question-content {
-    padding: 0px 0px 40px 0px;
-    swiper-container {
-        max-width: 600px;
-        height: auto;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-color: transparent;
-        background-size: cover;
-
-        swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            .option-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                height: fit-content;
-                text-align: center;
-
-                .image-container {
-                    width: 300px;
-                    height: 400px;
-                    position: relative;
-                    z-index: 1;
-                    // background-color: #366369;
-                    // background-color: #c79552;
-                    background: transparent;
-                    text-align: center;
-
-                    .image-container-frame {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 100%;
-                        width: 100%;
-                        z-index: 10;
-                        /* Ensure this is on top */
-                        background-size: cover;
-                        background-position: center;
-                    }
-
-                    img {
-                        height: 100%;
-                        width: 100%;
-                        margin: auto;
-                        z-index: 100;
-                        position: relative;
-                    }
-
-                }
-
-                p {
-                    color: white;
-                    line-height: 2rem;
-                    margin: 20px 20px 40px 20px;
-                    z-index: 10;
-                    /* Lower than the frame */
-                }
-
-                button {
-                    width: 100%;
-                    padding: 2px 4px;
-                    color: #fff;
-                    background: transparent;
-                    padding: 16px 48px 18px;
-                    font-size: 14px;
-                    line-height: 14px;
-                    border-radius: 30px;
-                    font-weight: bold;
-                    text-decoration: none;
-                    border: 1px solid white;
-                    margin: 10px 0px;
-                    
-                }
-            }
-        }
-    }
-}
-
-.question {
-    font-size: 1.2rem;
+.content {
+    /* Additional styles for your content */
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    line-height: 2rem;
-    margin: 40px;
-}
 
-ion-footer {
-    ion-button {
-        --background: transparent;
-        --color: white;
+    &-inner{
+        max-width: 600px;
+        padding: 20px;
+
+        img{
+            height: 150px;
+            width: 150px;
+        }
+        h1{
+            font-size: 3rem;
+            margin: 20px;
+        }
+
+        p{
+            line-height: 1.6rem;
+            font-size: 1rem;
+            margin: 20px;
+        }
+    }
+
+    button{
+        padding: 20px 40px;
+        background-color: rgb(107, 99, 181);
+        font-weight: bold;
+        font-size: 1rem;
+        border-radius: 30px;
+        color: white;
+        margin: 20px 0px;
     }
 }
 
-@media (max-width: 768px) {
-    .question-content {
-        swiper-container {
-            width: 350px;;
-            height: auto;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-color: transparent;
-            background-size: cover;
 
-            swiper-slide {
+@media (max-width: 1040px) {
+    .container {
+        display: block;
+        height: 100vh;
 
-                .option-container {
-
-                    .image-container {
-                        width: 250px;
-                        height: 350px
-                    }
-                }
+        &-header{
+            padding-top: 20px;
+            display: block;
+            text-align: center;
+            img{
+                height: 100px;
+                width: 100px;
             }
         }
     }
+
+    .hat-logo{
+        max-width: 400px;
+        max-height: 400px;
+        padding: 0px 50px;;
+    }
+
+    .content{
+        &-header{
+            display: none;
+        }
+
+        &-inner{
+            h1{
+                font-size: 2rem;
+            }
+        }
+    }
+
+
 }

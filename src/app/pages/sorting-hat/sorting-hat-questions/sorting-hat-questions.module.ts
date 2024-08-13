@@ -2,21 +2,20 @@ import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { SortingHatPageRoutingModule } from './sorting-hat-routing.module';
-import { SortingHatPage } from './sorting-hat.page';
-import { register } from 'swiper/element';
+import { SortingHatQuestionsPageRoutingModule } from './sorting-hat-questions-routing.module';
+import { SortingHatQuestionsPage } from './sorting-hat-questions.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-register();
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SortingHatPageRoutingModule,
+    SortingHatQuestionsPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SortingHatPage],
+  declarations: [SortingHatQuestionsPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
-export class SortingHatPageModule {}
+export class SortingHatQuestionsPageModule {}
