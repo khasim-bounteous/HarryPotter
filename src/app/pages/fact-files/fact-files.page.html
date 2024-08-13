@@ -53,7 +53,9 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <button (click)="loadMore()">Load fact</button>
+      <div class="load-more" >
+        <ion-button fill="outline" (click)="loadMore()">Load fact</ion-button>
+      </div>
        <!-- Infinite Scroll -->
        <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more fact files...">
