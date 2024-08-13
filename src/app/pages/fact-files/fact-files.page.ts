@@ -36,7 +36,7 @@ export class FactFilesPage implements OnInit {
 //         "data": {
 //             "filter": "characters_pets",
 //             "filter_img": "category-icon-characters-and-pets-desktop.svg",
-//             "name": "characters & pets",
+//             "name": "characters",
 //             "color": "rgb(209, 176, 125)"
 //         }
 //     },
@@ -104,9 +104,8 @@ export class FactFilesPage implements OnInit {
     private store: Store<FactFiles>
   ) { }
   ngOnInit() {
-    // this.factFiles$ = this.firebaseService.getFactfiles();
-    this.factFiles$ = this.store.select(getFactFiles).pipe(tap((data)=>console.log(data)))
-    this.factFilter$ = this.firebaseService.getCharacterCategories().pipe(tap((data)=>console.log(data)))
+    this.factFiles$ = this.store.select(getFactFiles)
+    this.factFilter$ = this.firebaseService.getCharacterCategories()
   }
 
   
