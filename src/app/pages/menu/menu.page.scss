@@ -1,7 +1,6 @@
 ion-menu {
     ion-content {
         --background: #10141b;
-
         /* Changes the background color of the menu */
         ion-menu-toggle {
             --background: #10141b;
@@ -17,6 +16,9 @@ ion-menu {
 }
 .root{
     padding: 15px 20px;
+    background: url('../../../assets/signup_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .close-icon{
     height: 30px;
