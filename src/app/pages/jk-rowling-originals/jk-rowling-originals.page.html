@@ -20,7 +20,7 @@
       </div>
       <ion-grid *ngIf="writings$ | async as writings">
         <ion-row>
-          <ion-col sizeXl="4" sizeLg="4" sizeMd="6" sizeSm="6" sizeXs="12" *ngFor="let item of writings">
+          <ion-col sizeXl="4" sizeLg="4" sizeMd="6" sizeSm="6" sizeXs="12" *ngFor="let item of writings.slice(1)">
             <app-writing-card [writingData]="item"></app-writing-card>
           </ion-col>
         </ion-row>
