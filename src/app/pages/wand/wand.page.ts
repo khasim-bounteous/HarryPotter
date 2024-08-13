@@ -156,7 +156,7 @@ export class WandPage implements OnInit {
       this.firebaseAuthService.addWandToUserProfile(this.wand).then(()=>{
         this.store.dispatch(loadUserDetails())
       })
-      this.router.navigate(['/menu/profile'])
+      this.router.navigate(['/profile'])
       
     }
   }

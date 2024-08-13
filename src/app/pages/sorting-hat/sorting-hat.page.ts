@@ -157,7 +157,7 @@ export class SortingHatPage implements OnInit {
       this.firebaseAuthService.addHouseToUserProfile(this.house).then(()=>{
         this.store.dispatch(loadUserDetails())
       })
-      this.router.navigate(['/menu/profile'])
+      this.router.navigate(['/profile'])
     }
   }
 

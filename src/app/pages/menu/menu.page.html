@@ -1,21 +1,26 @@
 <ion-menu contentId="main" menuId="myMenu" side="start" type="overlay">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-content>
     <ion-menu-toggle>
-      <ion-item *ngFor="let item of menuItems"  [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.path" routerLinkActive="router-link-active" >
-        <ion-icon [name]="item.icon" slot="start"></ion-icon>
-        {{item.title}}
-      </ion-item>
-      <ion-item *ngIf="userLoggedIn" (click)="onLogout()">
-        Logout
-      </ion-item>
-      <ion-item  *ngIf="!userLoggedIn" routerLink="/login" >
-        Login
-      </ion-item>
+      <div class="root">
+        <ion-icon class="close-icon" name="close"></ion-icon>
+        <div class="menu-header">
+          <img
+            src="https://www.wizardingworld.com/assets/_next/static/images/nav-promo-810974b5613e101e6a4d226a2260fc94.png"
+            alt="">
+        </div>
+        <div class="menu-container">
+          <div class="menu-item" *ngFor="let item of menuItems" [routerLinkActiveOptions]="{exact:true}"
+            [routerLink]="item.path" routerLinkActive="router-link-active">
+            {{item.title | uppercase}}
+          </div>
+          <div class="menu-item"  *ngIf="userLoggedIn" (click)="onLogout()">
+            Logout
+          </div>
+          <div class="menu-item"  *ngIf="!userLoggedIn" routerLink="/login">
+            Login
+          </div>
+        </div>
+      </div>
     </ion-menu-toggle>
   </ion-content>
 </ion-menu>

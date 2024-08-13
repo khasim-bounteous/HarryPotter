@@ -17,29 +17,32 @@ export class MenuPage implements OnInit {
 
   menuItems = [
     {
-      title:'Home',
-      icon: 'home',
-      path: '',
+      title: 'Home',
+      path: '/'
     },
     {
-      title:'Headlines',
-      icon: 'information-circle',
-      path: '/headlines',
+      title:'J.k. Rowling Archive',
+      path: '/jk-rowling-originals',
     },
     {
-      title:'Articles',
-      icon: 'mail',
-      path: '/world-newz',
+      title:'Films',
+      path: '/films',
     },
     {
-      title:'Source-Headlines',
-      icon: 'mail',
-      path: '/source-headlines',
+      title:'books',
+      path: '/books',
     },
     {
-      title:'Saved Articles',
-      icon: 'mail',
-      path: '/saved-articles',
+      title:'Fact-files',
+      path: '/fact-files',
+    },
+    {
+      title:'Hogwarts sorting',
+      path: '/sorting-hat',
+    },
+    {
+      title:'Profile',
+      path: '/profile',
     },
   ]
 
