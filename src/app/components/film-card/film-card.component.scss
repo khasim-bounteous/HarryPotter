@@ -1,8 +1,13 @@
-.card-image{
-    height: 25rem;
-    border-radius:10px;
-}
+.card {
+    cursor: pointer;
 
-.card-title{
-    text-align: center;
+    &-image {
+        height: 25rem;
+        border-radius: 10px;
+    }
+
+    &-title {
+        text-align: center;
+    }
+
 }

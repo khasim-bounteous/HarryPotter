@@ -12,18 +12,18 @@
       <!-- <img src="../../../assets/logo.png" width="50px" alt=""> -->
     </ion-col>
     <ion-col size="8" class="nav-center">
-      <img routerLink="/menu/home" class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
+      <img routerLink="/home" class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
     </ion-col>
     <ion-col size="2" class="nav-end">
         <input fill="outline" placeholder="Search" class="search">
-        <img routerLink="/menu/profile" class="profile-pic" src="../../../assets/profile.jpg" />
+        <img routerLink="/profile" class="profile-pic" src="../../../assets/profile.jpg" />
     </ion-col>
   </ion-row>
   <div class="secondary-nav" >
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/films" routerDirection="root" routerLinkActive="active-item" >FILMS</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item" >J.K. ROWLING ARCHIVE</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/fact-files" routerDirection="root" routerLinkActive="active-item" >FACT FILES</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/menu/books" routerDirection="root" routerLinkActive="active-item" >BOOKS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/films" routerDirection="root" routerLinkActive="active-item" >FILMS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item" >J.K. ROWLING ARCHIVE</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/fact-files" routerDirection="root" routerLinkActive="active-item" >FACT FILES</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/books" routerDirection="root" routerLinkActive="active-item" >BOOKS</ion-button>
     <ion-button fill="clear" class="nav-feature" (click)="onLogout()">LOGOUT</ion-button>
   </div>
 

@@ -20,7 +20,7 @@ export const AuthGuard: CanActivateFn = () => {
   if(userDetails && userDetails.email)
     return true;
   else{
-    router.navigate(['/menu/profile'])
+    router.navigate(['/profile'])
     return false;
   }
 };

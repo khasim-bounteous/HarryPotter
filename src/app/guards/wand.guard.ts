@@ -17,7 +17,7 @@ export const wandGuard: CanActivateFn = (route, state) => {
   {
     if(userDetails.wand)
     {
-      router.navigate(['/menu/profile'])
+      router.navigate(['/profile'])
       return false;
     }
     else

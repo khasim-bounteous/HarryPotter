@@ -17,7 +17,7 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
     {
       if(userDetails.house)
       {
-        router.navigate(['/menu/profile'])
+        router.navigate(['/profile'])
         return false;
       }
       else

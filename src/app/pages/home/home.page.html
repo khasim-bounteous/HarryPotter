@@ -1,154 +1,156 @@
 <ion-content>
 
-  <section class="hero">
-    <div class="hero-mobile-bg">
-      <img src="../../../assets/home-bg/hp-f6-harry-hermione-library-homepage-hero-MOBILE.jpg" alt="">
-    </div>
-    <div class="hero-inner">
-      <h1 class="hero-title">Celebrate Harry Potter's birthday</h1>
-      <p class="hero-desc">Did you know, canonically speaking, in 2024, Harry is turning 44? Here are all the ways you
-        can celebrate the Boy Who Lived's big day this year.</p>
-      <button class="hero-button">EXPLORE</button>
-    </div>
-  </section>
+  <div class="root">
+    <section class="hero">
+      <div class="hero-mobile-bg">
+        <img src="../../../assets/home-bg/hp-f6-harry-hermione-library-homepage-hero-MOBILE.jpg" alt="">
+      </div>
+      <div class="hero-inner">
+        <h1 class="hero-title">Celebrate Harry Potter's birthday</h1>
+        <p class="hero-desc">Did you know, canonically speaking, in 2024, Harry is turning 44? Here are all the ways you
+          can celebrate the Boy Who Lived's big day this year.</p>
+        <button routerLink="/fact-files" class="hero-button">EXPLORE</button>
+      </div>
+    </section>
 
-  <section class="feature-cards">
-    <div class="feature-cards-inner">
-      <h1 class="feature-title">Your Wizarding Checklist</h1>
-      <ion-grid>
-        <ion-row class="feature-grid">
-          <ion-col [routerLink]="'/menu/films'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
-            <ion-card>
-              <img class="feature-cards-img" alt="Silhouette of mountains"
-                src="https://images.ctfassets.net/usf1vwtuqyxm/2ORLOtKGERLTj7zOhkybK8/2acc43946f450922ae9deb45131f367d/things-to-look-forward-to-in-the-wizarding-world-2022-fb-crop-web-landscape?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
-              <ion-card-header>
-                <ion-card-title>FILMS</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                J.K. Rowling’s beloved Harry Potter novels were brought to life on screen in eight blockbuster films.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col [routerLink]="'/menu/books'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
-            <ion-card>
-              <img class="feature-cards-img" alt="Silhouette of mountains"
-                src="https://images.ctfassets.net/usf1vwtuqyxm/5DIhpKUsxSjdNUnosbvqy7/ded32d8c59c7338083b444ca73872a8c/hogwarts-legacy-desktop.jpg?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
-              <ion-card-header>
-                <ion-card-title>BOOKS</ion-card-title>
-              </ion-card-header>
+    <section class="feature-cards">
+      <div class="feature-cards-inner">
+        <h1 class="feature-title">Your Wizarding Checklist</h1>
+        <ion-grid>
+          <ion-row class="feature-grid">
+            <ion-col [routerLink]="'/films'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
+              <ion-card>
+                <img class="feature-cards-img" alt="Silhouette of mountains"
+                  src="https://images.ctfassets.net/usf1vwtuqyxm/2ORLOtKGERLTj7zOhkybK8/2acc43946f450922ae9deb45131f367d/things-to-look-forward-to-in-the-wizarding-world-2022-fb-crop-web-landscape?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
+                <ion-card-header>
+                  <ion-card-title>FILMS</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  J.K. Rowling’s beloved Harry Potter novels were brought to life on screen in eight blockbuster films.
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col [routerLink]="'/books'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
+              <ion-card>
+                <img class="feature-cards-img" alt="Silhouette of mountains"
+                  src="https://images.ctfassets.net/usf1vwtuqyxm/5DIhpKUsxSjdNUnosbvqy7/ded32d8c59c7338083b444ca73872a8c/hogwarts-legacy-desktop.jpg?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
+                <ion-card-header>
+                  <ion-card-title>BOOKS</ion-card-title>
+                </ion-card-header>
 
-              <ion-card-content>
-                The first Harry Potter book, Harry Potter and the Philosopher’s Stone, was published by Bloomsbury.
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col [routerLink]="'/menu/jk-rowling-originals'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
-            <ion-card>
-              <img class="feature-cards-img" alt="Silhouette of mountains"
-                src="https://images.ctfassets.net/usf1vwtuqyxm/CrxcJP42FZao71rlBFLln/2b574a35fdb9d003d9386f10258f6ed9/HPCC-hogwarts-students-of-all-houses-centre-stage-web-landscape?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
-              <ion-card-header>
-                <ion-card-title>ORIJINALS</ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                Explore the inner workings of the wizarding world with a collection of writing from J.K. Rowling
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </section>
+                <ion-card-content>
+                  The first Harry Potter book, Harry Potter and the Philosopher’s Stone, was published by Bloomsbury.
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col [routerLink]="'/jk-rowling-originals'" sizeLg="4" sizeMd="6" sizeSm="12" sizeXs="12">
+              <ion-card>
+                <img class="feature-cards-img" alt="Silhouette of mountains"
+                  src="https://images.ctfassets.net/usf1vwtuqyxm/CrxcJP42FZao71rlBFLln/2b574a35fdb9d003d9386f10258f6ed9/HPCC-hogwarts-students-of-all-houses-centre-stage-web-landscape?w=600&h=400&fit=fill&f=top&fm=webp&q=100" />
+                <ion-card-header>
+                  <ion-card-title>ORIJINALS</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  Explore the inner workings of the wizarding world with a collection of writing from J.K. Rowling
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </section>
 
 
-  <section class="check-list">
-    <div class="check-list-inner">
-      <h1 class="feature-title">Your Wizarding Checklist</h1>
-      <ion-grid>
-        <ion-row class="check-list-row">
-          <ion-col routerLink="/sorting-hat" sizeMd="3" sizeSm="6" class="check-list-card">
-            <img class="check-list-img" src="../../../assets/home-bg/sorting-hat.png" alt="">
-            <button class="check-list-btn">GET SORTED</button>
-          </ion-col>
-          <ion-col routerLink="/wand" sizeMd="3" sizeSm="6" class="check-list-card">
-            <img class="check-list-img" src="../../../assets/home-bg/patronous.png" alt="">
-            <button class="check-list-btn">PATRONUS</button>
-          </ion-col>
-          <ion-col routerLink="/wand" sizeMd="3" sizeSm="6" class="check-list-card">
-            <img class="check-list-img" src="../../../assets/home-bg/wand.png" alt="">
-            <button class="check-list-btn">DISCOVER YOUR WAND</button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
+    <section class="check-list">
+      <div class="check-list-inner">
+        <h1 class="feature-title">Your Wizarding Checklist</h1>
+        <ion-grid>
+          <ion-row class="check-list-row">
+            <ion-col routerLink="/sorting-hat" sizeMd="3" sizeSm="6" class="check-list-card">
+              <img class="check-list-img" src="../../../assets/home-bg/sorting-hat.png" alt="">
+              <button class="check-list-btn">GET SORTED</button>
+            </ion-col>
+            <ion-col routerLink="/wand" sizeMd="3" sizeSm="6" class="check-list-card">
+              <img class="check-list-img" src="../../../assets/home-bg/patronous.png" alt="">
+              <button class="check-list-btn">PATRONUS</button>
+            </ion-col>
+            <ion-col routerLink="/wand" sizeMd="3" sizeSm="6" class="check-list-card">
+              <img class="check-list-img" src="../../../assets/home-bg/wand.png" alt="">
+              <button class="check-list-btn">DISCOVER YOUR WAND</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
 
-  </section>
+    </section>
 
-  <section class="feature-swiper-root">
-    <div class="feature-swiper-inner">
-      <h1 class="feature-title">Discover the Wizarding World</h1>
-      <swiper-container class="mySwiper" #swiper1 navigation="true" autoplay-delay="2000" keyboard="true" mousewheel="true"
-        css-mode="true" slides-per-view="5" loop="true" space-between="20" free-mode="true">
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_Books_Discover_Flexible_Carousel_Promo_image_no_next__1_.png"
-            alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_Experiences_Discover_Flexible_Carousel_Promo_image_no_text__1_.png"
-            alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_Films_Discover_Flexible_Carousel_Promo_image_no_text__1_.png"
-            alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_On_Stage_Discover_Flexible_Carousel_Promo_image_no_text___1_.png"
-            alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_Portkey_Games_Discover_Flexible_Carousel_imaged_no_text__1_.png"
-            alt="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="feature-swiper-img"
-            src="../../../app/../assets/home-slider/Feature_Starting_Harry_Potter_Flexible_Carousel_Promo_Image_no_text__1_.png"
-            alt="">
-        </swiper-slide>
-      </swiper-container>
-    </div>
-  </section>
+    <section class="feature-swiper-root">
+      <div class="feature-swiper-inner">
+        <h1 class="feature-title">Discover the Wizarding World</h1>
+        <swiper-container class="mySwiper" #swiper1 navigation="true" autoplay-delay="2000" keyboard="true"
+          mousewheel="true" css-mode="true" slides-per-view="5" loop="true" space-between="20" free-mode="true">
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_Books_Discover_Flexible_Carousel_Promo_image_no_next__1_.png"
+              alt="">
+          </swiper-slide>
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_Experiences_Discover_Flexible_Carousel_Promo_image_no_text__1_.png"
+              alt="">
+          </swiper-slide>
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_Films_Discover_Flexible_Carousel_Promo_image_no_text__1_.png"
+              alt="">
+          </swiper-slide>
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_On_Stage_Discover_Flexible_Carousel_Promo_image_no_text___1_.png"
+              alt="">
+          </swiper-slide>
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_Portkey_Games_Discover_Flexible_Carousel_imaged_no_text__1_.png"
+              alt="">
+          </swiper-slide>
+          <swiper-slide>
+            <img class="feature-swiper-img"
+              src="../../../app/../assets/home-slider/Feature_Starting_Harry_Potter_Flexible_Carousel_Promo_Image_no_text__1_.png"
+              alt="">
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </section>
 
-  <section class="fact-swiper-root">
-    <div class="fact-swiper-inner">
-      <h1 class="feature-title">Monthly Magical Picks</h1>
-      <swiper-container class="mySwiper" #swiper2 navigation="true" autoplay-delay="2000" keyboard="true" mousewheel="true"
-      css-mode="true" slides-per-view="5" loop="true" space-between="20" free-mode="true">
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-01.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-02.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-03.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-04.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-05.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-06.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-07.png"
-            alt=""></swiper-slide>
-        <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-08.png"
-            alt=""></swiper-slide>
+    <section class="fact-swiper-root">
+      <div class="fact-swiper-inner">
+        <h1 class="feature-title">Monthly Magical Picks</h1>
+        <swiper-container class="mySwiper" #swiper2 navigation="true" autoplay-delay="2000" keyboard="true"
+          mousewheel="true" css-mode="true" slides-per-view="5" loop="true" space-between="20" free-mode="true">
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-01.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-02.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-03.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-04.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-05.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-06.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-07.png"
+              alt=""></swiper-slide>
+          <swiper-slide><img src="../../../app/../assets/home-slider/Homepage_Flexible_Carousel_Designs-08.png"
+              alt=""></swiper-slide>
 
-      </swiper-container>
-    </div>
-  </section>
+        </swiper-container>
+      </div>
+    </section>
 
-  <app-footer class="footer"></app-footer>
+    <app-footer class="footer"></app-footer>
+  </div>
 
 </ion-content>
 

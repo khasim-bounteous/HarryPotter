@@ -43,7 +43,7 @@ export class LoginPage implements OnInit {
           this.toastService.presentToast('Login successful!');
           this.loginForm.reset()
           this.store.dispatch(loadUserDetails())
-          this.router.navigate(['/menu/home']);
+          this.router.navigate(['/home']);
       })
       // this.authService.userLogin(loginData).subscribe({
       //   next: data=>{

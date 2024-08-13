@@ -1,4 +1,4 @@
-<div class="fact-card" [routerLink]="['/menu/fact-files/',factFile.key]">
+<div class="fact-card" [routerLink]="['/fact-files/',factFile.key]">
   <img *ngIf="factFile.data.urlImage; else defaultImage" class="fact-image" [src]="factFile.data.urlImage" alt="">
   <ng-template #defaultImage>
     <img class="fact-image fact-null-image" src="https://www.wizardingworld.com/images/wwlogo.svg" alt="Default Image">

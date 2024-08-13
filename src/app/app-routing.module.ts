@@ -7,7 +7,7 @@ import { sortingHatGuard } from './guards/sorting-hat.guard';
 import { wandGuard } from './guards/wand.guard';
  
 const redirectUnauthorizedToLogIn = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToHome = () => redirectLoggedInTo(['/menu/home']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['/home']);
 
 const routes: Routes = [
 
@@ -18,28 +18,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    // ...canActivate(redirectLoggedInToHome)
-  },
-  {
-    path: 'forgot-password',
-    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  },
-  {
-    path: 'index',
-    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
-  },
-  {
-    path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
-    ...canActivate(redirectUnauthorizedToLogIn)
-  },
-  {
-    path: 'not-found',
-    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
-  },
-  {
-    path: 'add_data',
-    loadChildren: () => import('./pages/tem/tem.module').then( m => m.TemPageModule)
+    ...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'sorting-hat',
@@ -50,7 +29,28 @@ const routes: Routes = [
     path: 'wand',
     loadChildren: () => import('./pages/wand/wand.module').then( m => m.WandPageModule),
     canActivate: [wandGuard]
-  },  
+  }, 
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
+    ...canActivate(redirectUnauthorizedToLogIn)
+  },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+  {
+    path: 'add_data',
+    loadChildren: () => import('./pages/tem/tem.module').then( m => m.TemPageModule)
+  }, 
   {
     path: '**',
     component: NotFoundPage
