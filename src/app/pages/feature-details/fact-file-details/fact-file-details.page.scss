@@ -225,13 +225,33 @@ hr {
     .feature-root {
         background-size: 800px;
     }
-
-    .feature-content {
-        background-color: rgb(56, 44, 68);
-        display: block;
-    }
     .feature{
         margin-top: 30px;
+
+        &-content{
+            padding:  0px;
+            background-color: rgb(56, 44, 68);
+            display: block;
+
+            &-main{
+                padding: 30px;
+            }
+
+            &-sidebar {
+
+                width: 100%;
+                margin-top: 40px;
+                padding: 30px;
+        
+                &-inner {
+                    font-size: 13.5px;
+                    font-weight: 300;
+                    height: auto;
+                    line-height: 19px;
+                }
+            }
+        }
+        
     }
     .feature-search {
         max-width: 780px;
@@ -270,21 +290,6 @@ hr {
     }
     .sidebar-title {
         font-size: 18px;
-    }
-
-    .feature-content-sidebar {
-
-        width: 100%;
-        margin-top: 40px;
-        padding: 0px;
-        background-color: inherit;
-
-        &-inner {
-            font-size: 13.5px;
-            font-weight: 300;
-            height: auto;
-            line-height: 19px;
-        }
     }
 
     .feature-header {
