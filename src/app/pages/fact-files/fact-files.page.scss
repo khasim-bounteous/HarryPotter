@@ -86,6 +86,21 @@ ion-content {
     }
 }
 
+.loader {
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+    z-index: 9999;
+
+    /* Ensure it's on top of other content */
+    ion-spinner {
+        height: 50px;
+        width: 50px;
+    }
+}
+
 .featured-badge {
     position: absolute;
     top: -4px;
@@ -231,7 +246,19 @@ ion-content {
 }
 
 .load-more{
+    margin: 50px 10px;
     text-align: center;
+    button{
+        padding: 20px 80px;
+        border-radius: 30px;
+        border: 2px solid rgb(79, 80, 80);
+        background-color: transparent;
+        font-weight: bold;
+
+        &:hover{
+            border: 2px solid rgb(185, 185, 185);
+        }
+    }
 }
 .fact-item app-fact-card {
     flex-grow: 1;

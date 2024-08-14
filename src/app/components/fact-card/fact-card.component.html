@@ -1,10 +1,10 @@
-<div class="fact-card" [routerLink]="['/fact-files/',factFile.key]">
+<div class="fact-card" [ngStyle]="{'background-color': categoryThemes[factFile.data.category].sideNav}"  [routerLink]="['/fact-files/',factFile.key]">
   <img *ngIf="factFile.data.urlImage; else defaultImage" class="fact-image" [src]="factFile.data.urlImage" alt="">
   <ng-template #defaultImage>
     <img class="fact-image fact-null-image" src="https://www.wizardingworld.com/images/wwlogo.svg" alt="Default Image">
   </ng-template>
   <div class="fact-title">{{ factFile.data.name }}</div>
   <div class="fact-category">
-    <img class="fact-category-img" src="../../../assets/fact-files/category-icon-characters-and-pets-mobile.svg" alt="">
+    <img class="fact-category-img" [src]="'../../../assets/fact-files/'+categoryThemes[factFile.data.category].imgUrl" alt="">
   </div>
 </div>

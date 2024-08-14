@@ -17,7 +17,8 @@
         <div class="featured-anchor-file-root">
           <div class="featured-badge">
             <div class="featured-badge-frame"></div>
-            <picture><img class="featured-badge-image" src="../../../assets/fact-files/category-icon-characters-and-pets-desktop.svg" alt=""></picture>
+            <picture><img class="featured-badge-image"
+                src="../../../assets/fact-files/category-icon-characters-and-pets-desktop.svg" alt=""></picture>
             <div class="featured-badge-content">CHARACTERS & PETS</div>
           </div>
           <div class="featured-image-container">
@@ -27,37 +28,43 @@
             <div>FEATURED FACT FILE</div>
             <h3>Draco Malfoy</h3>
             <div class="featured-content-inner">
-              A Slytherin pupil who had a strong rivalry with Harry Potter and a family loyal to Lord Voldemort, from the moment Draco and Harry met in Madam Malkin’s Robes for All Occasions the two didn’t see eye to eye. Harry rejected Draco’s...
+              A Slytherin pupil who had a strong rivalry with Harry Potter and a family loyal to Lord Voldemort, from
+              the moment Draco and Harry met in Madam Malkin’s Robes for All Occasions the two didn’t see eye to eye.
+              Harry rejected Draco’s...
             </div>
             <p class="featured-content-span">READ MORE</p>
           </div>
-          
+
         </div>
       </a>
       <div class="fact-file-divider"></div>
       <div class="fact-file-filter-container" *ngIf="factFilter$ | async as factFilter">
-        <div *ngFor="let filter of factFilter" (click)="getFactFilesByCategory(filter.data.filter)"  class="filter-box">
-           <div class="filter-box-con" [ngStyle]="category===filter.data.filter ? {'border':'2px solid #ffffffde'}: {'border-color': filter.data.color}">
-              <div class="filter-box-inner ">
-                <div class="filter-box-badge"></div>
-                <img class="filter-icon" src="../../../assets/fact-files/{{filter.data.filter_img}}" alt="">
-                <p [ngStyle]="{'color': filter.data.color}">{{filter.data.name| uppercase}}</p>
+        <div *ngFor="let filter of factFilter" (click)="getFactFilesByCategory(filter.data.filter)" class="filter-box">
+          <div class="filter-box-con"
+            [ngStyle]="category===filter.data.filter ? {'border':'2px solid #ffffffde'}: {'border-color': filter.data.color}">
+            <div class="filter-box-inner ">
+              <div class="filter-box-badge"></div>
+              <img class="filter-icon" src="../../../assets/fact-files/{{filter.data.filter_img}}" alt="">
+              <p [ngStyle]="{'color': filter.data.color}">{{filter.data.name| uppercase}}</p>
             </div>
-           </div>
+          </div>
         </div>
       </div>
-      <ion-grid  class="fact-items-grid" *ngIf="factFiles$ | async as factFiles">
-        <ion-row>
-          <ion-col *ngFor="let factFile of factFiles" sizeXl="3" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="6">
-            <app-fact-card [factFile]="factFile"></app-fact-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <div class="load-more" >
-        <ion-button fill="outline" (click)="loadMore()">Load fact</ion-button>
+      <div *ngIf="factFiles$ | async as factFiles">
+        <ion-grid class="fact-items-grid">
+          <ion-row>
+            <ion-col *ngFor="let factFile of factFiles" sizeXl="3" sizeLg="3" sizeMd="4" sizeSm="6" sizeXs="6">
+              <app-fact-card [factFile]="factFile"></app-fact-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div class="load-more" *ngIf="factFiles.length!=0 && factFiles.length % 20 == 0">
+          <button fill="outline" (click)="loadMore()">SHOW MORE</button>
+        </div>
       </div>
-       <!-- Infinite Scroll -->
-       <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+      <div  class="loader" *ngIf="!isLoaded"><ion-spinner></ion-spinner></div>
+      <!-- Infinite Scroll -->
+      <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more fact files...">
         </ion-infinite-scroll-content>
       </ion-infinite-scroll> -->

@@ -20,6 +20,8 @@ export class FactFilesPage implements OnInit {
   limit: number = 20;
   loading = false;
   searchTerm: string = '';
+  isLoaded = false;
+
 
 //   factFilter$ : Observable<Category[]> = of([
 //     {
@@ -104,7 +106,9 @@ export class FactFilesPage implements OnInit {
     private store: Store<FactFiles>
   ) { }
   ngOnInit() {
-    this.factFiles$ = this.store.select(getFactFiles)
+    this.factFiles$ = this.store.select(getFactFiles).pipe(
+      tap(()=>this.isLoaded = true),
+    )
     this.factFilter$ = this.firebaseService.getCharacterCategories()
   }
 
