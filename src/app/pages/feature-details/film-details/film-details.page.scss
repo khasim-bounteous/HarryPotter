@@ -1,5 +1,5 @@
 ion-content {
-    --ion-background-color: #ffffff !important;
+    --ion-background-color: #faf6f0 !important;
 }
 
 ion-spinner{
@@ -24,7 +24,7 @@ ion-spinner{
     align-items: center;
     padding-top: 120px;
     padding-bottom: 55px;
-    background-color: white;
+    background-color: #faf6f0;
     z-index: -2;
 }
 
@@ -56,17 +56,17 @@ ion-spinner{
 }
 
 .film-details-container {
-    background-color: white;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 40px;
 }
 
 .film-detials-description {
     width: 60%;
     max-width: 800px;
-    font-size: 24px;
+    font-size: 1.4rem;
     line-height: 36px;
     font-weight: 400;
     font-family: "Outfit", sans-serif;
@@ -133,7 +133,7 @@ ion-grid {
 
     .film-detials-description {
         width: 80%;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 36px;
     }
 

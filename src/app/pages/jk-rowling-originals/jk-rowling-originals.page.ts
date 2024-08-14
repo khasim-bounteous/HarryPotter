@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { JkOriginal } from 'src/app/interface/jk-original';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
@@ -15,9 +15,13 @@ export class JkRowlingOriginalsPage implements OnInit {
   ) { }
 
   writings$ !: Observable<JkOriginal[]>
+  isLoaded = false;
+
   
   ngOnInit() {
-    this.writings$ = this.potterService.getJKrowlingoriginals()
+    this.writings$ = this.potterService.getJKrowlingoriginals().pipe(
+      tap(()=>this.isLoaded = true),
+    )
   }
 
 }

@@ -66,9 +66,10 @@ ion-content {
         max-width: 800px;
         margin: auto;
         font-size: 1.4rem;
-        line-height: 35px;
+        line-height: 34px;
     }
 }
+
 .con-inner p::first-letter {
     font-size: 120px;
     font-weight: 700;
@@ -90,6 +91,7 @@ ion-content {
     0% {
         background-position: 50% 100%;
     }
+
     100% {
         background-position: 50% 0%;
     }
@@ -102,6 +104,7 @@ ion-content {
     .hero {
         min-height: 512px;
         height: fit-content;
+
         &-title {
             font-size: 2.5rem;
         }
@@ -112,6 +115,12 @@ ion-content {
 
         &-clock {
             font-size: 1rem;
+        }
+    }
+
+    .con {
+        &-inner {
+            font-size: 20px;
         }
     }
 }

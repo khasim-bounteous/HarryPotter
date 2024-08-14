@@ -18,6 +18,7 @@
         <div class="auth-diamond"></div>
         <hr>
       </div>
+      <div  class="loader" *ngIf="!isLoaded"><ion-spinner></ion-spinner></div>
       <ion-grid *ngIf="writings$ | async as writings">
         <ion-row>
           <ion-col sizeXl="4" sizeLg="4" sizeMd="6" sizeSm="6" sizeXs="12" *ngFor="let item of writings.slice(1)">
