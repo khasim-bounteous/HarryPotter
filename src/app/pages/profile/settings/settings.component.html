@@ -14,6 +14,10 @@
           <small>Email</small>
           <p>{{userDetails.email}}</p>
         </div>
+        <div *ngIf="userDetails?.dob" class="settings-con-box">
+          <small>Dob</small>
+          <p>{{userDetails.dob}}</p>
+        </div>
         <div *ngIf="userDetails?.house" class="settings-con-box">
           <small>House</small>
           <p>{{userDetails.house}}</p>

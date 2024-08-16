@@ -27,6 +27,7 @@ export class ThingsTodoComponent  implements OnInit {
     this.store.select(getUserDetails).subscribe(userDetails => {
       this.userDetails = userDetails
       this.firebaseService.getProfileContent('top_picks').subscribe(data=>this.thingsTodo = data)
+      if(userDetails.house)
       this.firebaseService.getProfileContent(userDetails.house).subscribe(data=>this.houseSecrets = data)
     });
 

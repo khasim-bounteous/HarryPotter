@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NotFoundPage } from './pages/not-found/not-found.page';
-import { AuthGuard } from './guards/auth-guard.guard';
 import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate} from '@angular/fire/auth-guard';
-import { sortingHatGuard } from './guards/sorting-hat.guard';
 import { wandGuard } from './guards/wand.guard';
  
-const redirectUnauthorizedToLogIn = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToHome = () => redirectLoggedInTo(['/home']);
+const redirectUnauthorizedToLogIn = () => redirectUnauthorizedTo(['/login']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['/']);
 
 const routes: Routes = [
 

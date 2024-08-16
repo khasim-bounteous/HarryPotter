@@ -41,7 +41,8 @@ const _userDetailsReducer = createReducer(
             uid: userDetails.uid,
             house : userDetails.house,
             wand : userDetails.wand,
-            avatar : userDetails.avatar
+            avatar : userDetails.avatar,
+            dob: userDetails.dob
         }
     }),
     on(resetUserDetails,(state)=>{
@@ -53,6 +54,7 @@ const _userDetailsReducer = createReducer(
             house : null,
             wand : null,
             avatar : null,
+            dob: null
         }
     })
 )

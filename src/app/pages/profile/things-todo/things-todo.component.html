@@ -8,7 +8,7 @@
       <p>{{item.data.title}}</p>
     </a>
   </div>
-  <div class="starter-pack">
+  <div *ngIf="userDetails?.house" class="starter-pack">
     <h1>The {{userDetails?.house}} secrets</h1>
     <ion-row>
       <ion-col *ngFor="let item of houseSecrets" sizeMd="12" sizeLg="6" sizeSm="12" sizeXs="12"  >

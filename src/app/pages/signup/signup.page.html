@@ -1,10 +1,11 @@
 <ion-content>
   <div class="root">
+    <div class="loader" *ngIf="isLoading"><ion-spinner></ion-spinner></div>
     <div class="root-inner">
       <div class="auth-header-logo">
         <ion-img src="../../../assets/logo.svg" alt="logo">
         </ion-img>
-      </div>
+      </div>  
       <div class="auth-header-con">
         <hr>
         <div class="auth-diamond"></div>
@@ -18,7 +19,10 @@
       <form action="" (submit)="onSubmit()" [formGroup]="signupForm" class="signup-form">
         <div class="signup-form-div">
           <label class="signup-form-label" for="">DATE OF BIRTH</label>
-          <ion-input class="signup-form-input" placeholder="DD/MM/YYYY" fill="outline"></ion-input>
+          <ion-input class="signup-form-input" type="date" formControlName="dob" placeholder="DD/MM/YYYY" fill="outline"></ion-input>
+          <div class="input-invalid" *ngIf="signupForm.get('dob')!.invalid && signupForm.get('dob')?.touched ">
+            You must be at least 13 years old*
+          </div>
         </div>
         <div class="signup-form-div">
           <label class="signup-form-label" for="">EMAIL ADDRESS</label>

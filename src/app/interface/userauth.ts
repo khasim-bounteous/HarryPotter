@@ -19,5 +19,6 @@ export interface UserDetails{
     uid: string | null,
     house : string | null,
     wand : string | null,
-    avatar : string | null
+    avatar : string | null,
+    dob: string | null,
 }

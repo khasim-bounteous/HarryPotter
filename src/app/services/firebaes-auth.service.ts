@@ -32,7 +32,7 @@ export class FirebaesAuthService {
       await update(userRef, { wand }); 
     }
   }
-  signup(signupData: { email: string, password: string, firstName: string, lastName: string }): Observable<any> {
+  signup(signupData: { dob: string,email: string, password: string, firstName: string, lastName: string }): Observable<any> {
     return from(createUserWithEmailAndPassword(this.auth, signupData.email, signupData.password)).pipe(
       switchMap(userCredential => {
         const user = userCredential.user;
@@ -44,7 +44,8 @@ export class FirebaesAuthService {
           lastName: signupData.lastName,
           house: null,
           wand: null,
-          avatar: null
+          avatar: null,
+          dob: signupData.dob
         }));
       })
     );

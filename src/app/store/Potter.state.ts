@@ -9,7 +9,8 @@ export const UserState: UserDetails = {
     uid: null,
     house : null,
     wand : null,
-    avatar : null
+    avatar : null,
+    dob: null
 }
 
 export const FactFileState : FactFiles = {
