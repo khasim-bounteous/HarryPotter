@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { dateOfBirthValidator } from 'src/app/customvalidators/dateOfBirthValidator';
 import { noWhitespaceValidator } from 'src/app/customvalidators/noWhiteSpaceValidator';
+import { strongPasswordValidator } from 'src/app/customvalidators/strongPasswordValidator';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { UserauthService } from 'src/app/services/userauth.service';
@@ -30,7 +31,7 @@ export class SignupPage implements OnInit {
       // name: new FormControl(""),
       dob:  new FormControl("", [Validators.required, dateOfBirthValidator()]),
       email: new FormControl("", [Validators.required, Validators.email,noWhitespaceValidator()]),
-      password: new FormControl("", [Validators.required, noWhitespaceValidator()]),
+      password: new FormControl("", [Validators.required, noWhitespaceValidator(),strongPasswordValidator()]),
       firstName: new FormControl("", [Validators.required,noWhitespaceValidator()]),
       lastName: new FormControl(""),
     });
