@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
+import { noWhitespaceValidator } from 'src/app/customvalidators/noWhiteSpaceValidator';
+import { strongPasswordValidator } from 'src/app/customvalidators/strongPasswordValidator';
 import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -25,11 +27,12 @@ export class LoginPage implements OnInit {
   ) { }
 
   loginForm !: FormGroup
+  isLoading = false
 
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl('',[Validators.required,Validators.email]),
-      password: new FormControl('',[Validators.required])
+      password: new FormControl('',[Validators.required,strongPasswordValidator(),noWhitespaceValidator()])
     })
   }
 
@@ -39,11 +42,20 @@ export class LoginPage implements OnInit {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password
       }
-      this.firebaseAuthService.login(loginData).subscribe(data=>{
+      this.isLoading = true
+      this.firebaseAuthService.login(loginData).subscribe({
+        next: async () => {
           this.toastService.presentToast('Login successful!');
           this.loginForm.reset()
           this.store.dispatch(loadUserDetails())
           this.router.navigate(['/']);
+          this.isLoading = false
+        },
+        error: async (error) => {
+          this.isLoading = false
+          this.toastService.presentToast("invalid credentials");
+          console.error(error);
+        }
       })
       // this.authService.userLogin(loginData).subscribe({
       //   next: data=>{

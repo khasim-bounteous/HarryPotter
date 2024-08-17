@@ -45,8 +45,10 @@ export class SignupPage implements OnInit {
         next: async () => {
           this.toastService.presentToast('Signup Success');
           this.router.navigate(['/login']);
+          this.isLoading = false
         },
         error: async (error) => {
+          this.isLoading = false
           this.toastService.presentToast(error.message);
           console.error(error);
         }

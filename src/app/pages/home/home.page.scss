@@ -272,6 +272,7 @@ swiper-slide {
 }
 
 swiper-slide img {
+  cursor: pointer;
   display: block;
   object-fit: cover;
   max-width: 100%;
@@ -288,6 +289,7 @@ swiper-slide img {
     background-size: 1000px;
     background-position: bottom center, top center, center center;
     width: 100%;
+    height: fit-content;
 
     ::after {
       display: none;
