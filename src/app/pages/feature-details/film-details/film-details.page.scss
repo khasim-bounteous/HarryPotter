@@ -1,5 +1,6 @@
 ion-content {
     --ion-background-color: #faf6f0 !important;
+    font-family: "Lexend", sans-serif; 
 }
 
 ion-spinner{
@@ -47,12 +48,14 @@ ion-spinner{
 .film-title {
     font-size: 60px;
     font-weight: 700;
-    line-height: 1;
     color: #fff;
     margin-top: 15px;
     margin-bottom: 20px;
     -webkit-text-stroke: 1px hsla(36, 50%, 96%, .2);
     white-space: pre-line;
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .film-details-container {
@@ -67,9 +70,8 @@ ion-spinner{
     width: 60%;
     max-width: 800px;
     font-size: 1.4rem;
-    line-height: 36px;
+    line-height: 40px;
     font-weight: 400;
-    font-family: "Outfit", sans-serif;
 }
 
 .film-detials-description::first-letter {

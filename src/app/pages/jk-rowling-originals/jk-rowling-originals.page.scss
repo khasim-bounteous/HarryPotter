@@ -1,5 +1,7 @@
 ion-content {
     --ion-background-color: #faf6f0 !important;
+    font-family: "Lexend", sans-serif;
+    font-style: normal;
 }
 
 
@@ -44,6 +46,9 @@ ion-content {
 
         h1 {
             font-size: 3rem;
+            font-family: "Merriweather", serif;
+            font-weight: bold;
+            font-style: normal;
         }
         
     }

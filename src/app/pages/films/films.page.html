@@ -25,7 +25,7 @@
           </div>
         </ion-col>
       </ion-row>
-      <div  class="loader" *ngIf="!isLoaded"><ion-spinner></ion-spinner></div>
+      <div  class="loader" *ngIf="!isLoaded"><ion-spinner name="crescent"></ion-spinner></div>
       <ion-grid *ngIf="films$ | async as films">
         <ion-row >
           <ion-col sizeMd="4" sizeXl="3" sizeLg="3" sizeXs="12" sizeSm="6" *ngFor="let film of films">

@@ -1,5 +1,6 @@
 ion-content {
     --ion-background-color: #faf6f0 !important;
+    font-family: "Lexend", sans-serif;
 }
 
 ion-spinner{
@@ -45,13 +46,14 @@ ion-spinner{
 
 .book-title {
     font-size: 60px;
-    font-weight: 700;
-    line-height: 1;
     color: #fff;
     margin-top: 15px;
     margin-bottom: 20px;
     -webkit-text-stroke: 1px hsla(36, 50%, 96%, .2);
     white-space: pre-line;
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+    font-style: normal;
 }
 
 .book-details-container {
@@ -70,7 +72,6 @@ ion-spinner{
     font-size: 1.4rem;
     line-height: 36px;
     font-weight: 400;
-    font-family: "Outfit", sans-serif;
 }
 
 .book-detials-description::first-letter {

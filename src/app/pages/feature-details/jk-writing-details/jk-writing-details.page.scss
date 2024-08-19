@@ -1,5 +1,7 @@
 ion-content {
     --ion-background-color: #10141b;
+    font-family: "Lexend", sans-serif;
+    font-style: normal;
 }
 
 .hero {
@@ -45,8 +47,10 @@ ion-content {
     }
 
     &-title {
+        font-family: "Merriweather", serif;
+        font-weight: bold;
+        font-style: normal;
         font-size: 3.5rem;
-        font-weight: 700;
     }
 
     &-author {
@@ -63,10 +67,10 @@ ion-content {
     padding: 20px;
 
     &-inner {
-        max-width: 800px;
+        max-width: 900px;
         margin: auto;
         font-size: 1.4rem;
-        line-height: 34px;
+        line-height: 44px;
     }
 }
 

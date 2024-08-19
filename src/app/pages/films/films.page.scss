@@ -1,5 +1,6 @@
 ion-content {
-    --ion-background-color: rgba(16, 20, 27, 255)
+    --ion-background-color: rgba(16, 20, 27, 255);
+    font-family: "Lexend", sans-serif;
 }
 
 .loader {
@@ -42,6 +43,9 @@ ion-content {
 
         h1 {
             font-size: 3rem;
+            font-family: "Merriweather", serif;
+            font-weight: bold;
+            font-style: normal;
         }
     }
 }
@@ -84,7 +88,10 @@ ion-content {
 
 ion-grid {
     max-width: 1200px;
-
+    ion-row {
+        display: flex;
+        justify-content: center;
+      }
     ion-col {
         display: flex;
         justify-content: center;

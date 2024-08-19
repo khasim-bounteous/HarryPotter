@@ -26,7 +26,7 @@
           </div>
           <div class="featured-content">
             <div>FEATURED FACT FILE</div>
-            <h3>Draco Malfoy</h3>
+            <h1>Draco Malfoy</h1>
             <div class="featured-content-inner">
               A Slytherin pupil who had a strong rivalry with Harry Potter and a family loyal to Lord Voldemort, from
               the moment Draco and Harry met in Madam Malkin’s Robes for All Occasions the two didn’t see eye to eye.
@@ -62,7 +62,7 @@
           <button fill="outline" (click)="loadMore()">SHOW MORE</button>
         </div>
       </div>
-      <div  class="loader" *ngIf="!isLoaded"><ion-spinner></ion-spinner></div>
+      <div  class="loader" *ngIf="!isLoaded"><ion-spinner name="crescent"></ion-spinner></div>
       <!-- Infinite Scroll -->
       <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more fact files...">

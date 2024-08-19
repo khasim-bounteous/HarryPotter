@@ -58,7 +58,7 @@ export class MenuPage implements OnInit {
   ngOnInit() {
     const width = this.plt.width();
     this.toggleMenu(width);
-    this.initialize()
+    // this.initialize()
     
   }
 

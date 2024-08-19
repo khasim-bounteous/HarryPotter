@@ -9,6 +9,16 @@
     </div>
     <div class="feature" *ngIf="factFile">
       <div class="feature-header" [ngStyle]="{'background-color': categoryThemes[factFile.data.category].header}">
+        <ion-breadcrumbs >
+          <ion-breadcrumb routerLink="/fact-files">
+            All Fact Files
+            <ion-icon slot="separator" name="arrow-forward-outline"></ion-icon>
+          </ion-breadcrumb>
+          <ion-breadcrumb>
+            {{categoryThemes[factFile.data.category].name | titlecase}}
+            <ion-icon slot="separator" name="arrow-forward-outline"></ion-icon>
+          </ion-breadcrumb>
+        </ion-breadcrumbs>
         <h1 class="title">{{factFile.data.name}}</h1>
         <div class="featured-badge" [ngStyle]="{'background-color': categoryThemes[factFile.data.category].badge}">
           <div class="featured-badge-frame"></div>
@@ -37,7 +47,7 @@
             <div class="sidebar-item" *ngFor="let sideNav of factFile.data.sidenav">
               <h3 class="sidebar-title">{{sideNav.title | uppercase}}</h3>
               <div>
-                <p *ngFor="let appearance of sideNav.values">{{appearance}}</p>
+                <p class="sidebar-content" *ngFor="let appearance of sideNav.values">{{appearance}}</p>
               </div>
               <hr>
             </div>
@@ -45,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div  class="loader" *ngIf="!isLoaded"><ion-spinner></ion-spinner></div>
+    <div  class="loader" *ngIf="!isLoaded"><ion-spinner name="crescent"></ion-spinner></div>
     <div class="no-data" *ngIf="factFile==null && isLoaded">
       <div class="edge-line">
         <hr>

@@ -1,8 +1,10 @@
 .root{
   background-color: rgb(16, 20, 27);
+  font-family: "Lexend", sans-serif;
 }
 
 .hero {
+
   background: url('../../../assets/home-bg/hp-f6-harry-hermione-library-homepage-hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,13 +32,21 @@
   }
 
   &-title {
+    font-family: "Merriweather", serif;
+    font-weight: bold;
+    font-style: normal;
     font-size: 40px;
     width: 50%;
     margin: 20px auto;
   }
 
   &-desc {
-    font-size: 20px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    font-size: 22px;
     width: 50%;
     margin: auto;
   }
@@ -244,7 +254,8 @@ ion-col{
 }
 
 ion-card {
-  background-color: black
+  background-color: black;
+  font-family: "Lexend", sans-serif;
 }
 
 ion-card-content {
