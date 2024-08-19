@@ -1,3 +1,6 @@
+.root{
+    font-family: "Lexend", sans-serif;
+}
 .bg-img{
     position: fixed;
     top: 0;
@@ -10,40 +13,14 @@
 }
 .nav{
     background-color: transparent;
-    padding: 20px 10px 0px 10px;
-    color: #22D3EE;
-    font-weight: bold;
+    padding: 20px 10px;
     z-index: 100;
     position: relative;
-    &-start{
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        gap: 10px;
-        h3{
-            font-weight: inherit;
-        }
-        a{
-            cursor: pointer;
-            text-decoration: none;
-        }
-    }
+    
     &-center{
         display: flex;
         justify-content: center;
         align-items: center;
-        ion-button{
-            font-weight: inherit;
-            cursor: pointer;
-            color: inherit;
-        }
-    }
-
-    &-end{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 0px 20px;
     }
 
     &-logo{
@@ -119,11 +96,9 @@
                 }
 
                 button {
-                    width: 100%;
-                    padding: 2px 4px;
                     color: #fff;
                     background: transparent;
-                    padding: 16px 48px 18px;
+                    padding: 16px 100px;
                     font-size: 14px;
                     line-height: 14px;
                     border-radius: 30px;
@@ -131,7 +106,6 @@
                     text-decoration: none;
                     border: 1px solid white;
                     margin: 10px 0px;
-                    
                 }
             }
         }
@@ -145,12 +119,6 @@
     margin: 40px;
 }
 
-ion-footer {
-    ion-button {
-        --background: transparent;
-        --color: white;
-    }
-}
 
 @media (max-width: 768px) {
     .question-content {

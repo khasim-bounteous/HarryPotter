@@ -4,6 +4,7 @@
     min-height: 100%;
     background-size: cover;
     background-position: center;
+    font-family: "Lexend", sans-serif;
 }
 .bg-img{
     position: fixed;
@@ -17,45 +18,21 @@
 }
 .nav{
     background-color: transparent;
-    padding: 20px 10px 0px 10px;
-    color: #22D3EE;
-    font-weight: bold;
-    &-start{
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        gap: 10px;
-        h3{
-            font-weight: inherit;
-        }
-        a{
-            cursor: pointer;
-            text-decoration: none;
-        }
-    }
+    padding: 20px 10px;
+    z-index: 100;
+    position: relative;
+    
     &-center{
         display: flex;
         justify-content: center;
         align-items: center;
-        ion-button{
-            font-weight: inherit;
-            cursor: pointer;
-            color: inherit;
-        }
-    }
-
-    &-end{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 0px 20px;
     }
 
     &-logo{
         // border-radius: 50%;
         height: 60px;
         width: fit-content;
-        cursor: pointer;
+        cursor: pointer;;
     }
 }
 
@@ -70,7 +47,9 @@
     margin: auto;
     h2{
         font-size: 2.75rem;
-        font-weight: 700;
+        font-family: "Merriweather", serif;
+        font-weight: bold;
+        font-style: normal;
         margin-bottom: 50px;
         line-height: 2.5rem;
     }

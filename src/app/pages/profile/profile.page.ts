@@ -14,7 +14,7 @@ import { getUserDetails } from 'src/app/store/Potter.selector';
 export class ProfilePage implements OnInit {
 
   constructor(
-    private store: Store<{userDetails: UserDetails}>,
+    private store: Store<{userDetails: UserDetails}>
   ) { }
 
   settingOpen = false
@@ -22,7 +22,10 @@ export class ProfilePage implements OnInit {
   userDetails : UserDetails | null = null;
 
   ngOnInit() {
-    this.store.select(getUserDetails).subscribe(userDetails => this.userDetails = userDetails);
+    this.store.select(getUserDetails).subscribe(userDetails => {
+      this.userDetails = userDetails
+      console.log(userDetails)
+    });
   }
 
 }
