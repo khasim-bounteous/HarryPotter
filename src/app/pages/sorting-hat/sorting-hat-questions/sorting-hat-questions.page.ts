@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { loadUserDetails } from 'src/app/store/Potter.action';
 
 interface WandQuestion {
@@ -23,7 +24,8 @@ export class  SortingHatQuestionsPage  implements OnInit {
   constructor(
     private firebaseAuthService: FirebaesAuthService,
     private store: Store<UserDetails>,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
   ) { }
 
   ngOnInit(): void {
@@ -157,6 +159,7 @@ export class  SortingHatQuestionsPage  implements OnInit {
       this.firebaseAuthService.addHouseToUserProfile(this.house).then(()=>{
         this.store.dispatch(loadUserDetails())
       })
+      this.toastService.presentToast(`You belongs to ${this.house}`)
       this.router.navigate(['/profile'])
     }
   }
@@ -171,83 +174,3 @@ export class  SortingHatQuestionsPage  implements OnInit {
     this.currentQuestionIndex = 0;
   }
 }
-
-
-
-
-// questions: Question[] = [
-//   {
-//     text: 'Which quality do you value the most?',
-//     options: [
-//       { answer: 'Bravery', house: 'Gryffindor',image: 'https://my.wizardingworld.com/static/media/caution@2x.3374b39f.png' },
-//       { answer: 'Loyalty', house: 'Hufflepuff', image: 'https://my.wizardingworld.com/static/media/shadows@2x.fba40585.png'},
-//       { answer: 'Wisdom', house: 'Ravenclaw',image: 'https://my.wizardingworld.com/static/media/discover@2x.2f1acb2e.png' },
-//       { answer: 'Ambition', house: 'Slytherin',image: 'https://my.wizardingworld.com/static/media/caution@2x.3374b39f.png' },
-//     ],
-//     bgImage: 'https://my.wizardingworld.com/static/media/bg-stars@2x.116cc9fe.jpg'
-//   },
-//   {
-//     text: 'Which subject at Hogwarts interests you the most?',
-//     options: [
-//       { answer: 'Defense Against the Dark Arts', house: 'Gryffindor' },
-//       { answer: 'Herbology', house: 'Hufflepuff' },
-//       { answer: 'Astronomy', house: 'Ravenclaw' },
-//       { answer: 'Potions', house: 'Slytherin' },
-//     ],
-//       bgImage: 'https://my.wizardingworld.com/static/media/bg@2x.7a83e923.png'
-//   },
-//   // {
-//   //   text: 'What would you do if you found a magical object?',
-//   //   options: [
-//   //     { answer: 'Use it for good', house: 'Gryffindor' },
-//   //     { answer: 'Keep it safe', house: 'Hufflepuff' },
-//   //     { answer: 'Study it carefully', house: 'Ravenclaw' },
-//   //     { answer: 'Use it for your advantage', house: 'Slytherin' },
-//   //   ],
-//   // },
-//   // {
-//   //   text: 'How would you describe your group of friends?',
-//   //   options: [
-//   //     { answer: 'Brave and daring', house: 'Gryffindor' },
-//   //     { answer: 'Trustworthy and kind', house: 'Hufflepuff' },
-//   //     { answer: 'Intelligent and creative', house: 'Ravenclaw' },
-//   //     { answer: 'Ambitious and resourceful', house: 'Slytherin' },
-//   //   ],
-//   // },
-//   // {
-//   //   text: 'What do you fear the most?',
-//   //   options: [
-//   //     { answer: 'Failure', house: 'Gryffindor' },
-//   //     { answer: 'Being left out', house: 'Hufflepuff' },
-//   //     { answer: 'Ignorance', house: 'Ravenclaw' },
-//   //     { answer: 'Powerlessness', house: 'Slytherin' },
-//   //   ],
-//   // },
-//   // {
-//   //   text: 'What’s your preferred method of solving a problem?',
-//   //   options: [
-//   //     { answer: 'Facing it head-on', house: 'Gryffindor' },
-//   //     { answer: 'Working together', house: 'Hufflepuff' },
-//   //     { answer: 'Thinking it through', house: 'Ravenclaw' },
-//   //     { answer: 'Finding a loophole', house: 'Slytherin' },
-//   //   ],
-//   // },
-//   // {
-//   //   text: 'What would you do on a free weekend?',
-//   //   options: [
-//   //     { answer: 'Go on an adventure', house: 'Gryffindor' },
-//   //     { answer: 'Spend time with friends', house: 'Hufflepuff' },
-//   //     { answer: 'Read a good book', house: 'Ravenclaw' },
-//   //     { answer: 'Plan for the future', house: 'Slytherin' },
-//   //   ],
-//   // },
-//   // {
-//   //   text: 'Which magical creature do you find the most fascinating?',
-//   //   options: [
-//   //     { answer: 'Phoenix', house: 'Gryffindor' },
-//   //     { answer: 'Niffler', house: 'Hufflepuff' },
-//   //     { answer: 'Hippogriff', house: 'Ravenclaw' },
-//   //     { answer: 'Basilisk', house: 'Slytherin' },
-//   //   ],
-//   // },
-// ];

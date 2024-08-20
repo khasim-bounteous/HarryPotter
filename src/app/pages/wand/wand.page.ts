@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { loadUserDetails } from 'src/app/store/Potter.action';
 
 interface WandQuestion {
@@ -27,7 +28,9 @@ export class WandPage implements OnInit {
   constructor(
     private firebaseAuthService: FirebaesAuthService,
     private store: Store<UserDetails>,
-    private router: Router
+    private router: Router,
+    private toastService: ToastService
+
   ) { }
   ngOnInit() {
   }
@@ -156,6 +159,7 @@ export class WandPage implements OnInit {
       this.firebaseAuthService.addWandToUserProfile(this.wand).then(()=>{
         this.store.dispatch(loadUserDetails())
       })
+      this.toastService.presentToast(`You have been choosen by ${this.wand} wand`)
       this.router.navigate(['/profile'])
       
     }
