@@ -3,7 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { map, Observable } from 'rxjs';
 import { Book } from '../interface/book';
 import { FactFile } from '../interface/fact-file';
-import { JkOriginal } from '../interface/jk-original';
+import { JKOriginal } from '../interface/jk-original';
 import { MagicalNews } from '../interface/magical-news';
 import { Category, CategoryData } from '../interface/category';
 import { ProfileContent } from '../interface/profileContent';
@@ -181,26 +181,26 @@ export class FirebaseService {
     );
   }
 
-  getJKrowlingoriginals():Observable<JkOriginal[]> {
+  getJKrowlingoriginals():Observable<JKOriginal[]> {
     console.log("")
     return this.db.list('/jkrowlingoriginal').snapshotChanges().pipe(
       map(actions =>
         actions.map(a => {
           const key = a.payload.key;  
-          const data = a.payload.val() as JkOriginal['data']
-          return { key,data } as JkOriginal; 
+          const data = a.payload.val() as JKOriginal['data']
+          return { key,data } as JKOriginal; 
         })
       )
     );
   }
 
   
-  getJKrowlingoriginal(id: string): Observable<JkOriginal> {
+  getJKrowlingoriginal(id: string): Observable<JKOriginal> {
     return this.db.object(`/jkrowlingoriginal/${id}`).snapshotChanges().pipe(
       map(action => {
         const key = action.key;
-        const data = action.payload.val() as JkOriginal['data'] 
-        return { key, data } as JkOriginal;
+        const data = action.payload.val() as JKOriginal['data'] 
+        return { key, data } as JKOriginal;
       })
     );
   }

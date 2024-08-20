@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JkOriginal } from 'src/app/interface/jk-original';
 
 @Component({
   selector: 'app-writing-card',

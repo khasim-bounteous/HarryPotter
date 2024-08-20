@@ -16,15 +16,15 @@
       <img routerLink="/" class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
     </ion-col>
     <ion-col size="2" class="nav-end">
-        <!-- <input fill="outline" placeholder="Search" class="search"> -->
+        <input fill="outline" placeholder="Search" class="search">
         <img routerLink="/profile" class="profile-pic" src="../../../assets/profile.jpg" />
     </ion-col>
   </ion-row>
   <div class="secondary-nav" >
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/films" routerDirection="root" routerLinkActive="active-item" >FILMS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/films"  routerLinkActive="active-item" >FILMS</ion-button>
     <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item" >J.K. ROWLING ARCHIVE</ion-button>
     <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/fact-files" routerDirection="root" routerLinkActive="active-item" >FACT FILES</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/books" routerDirectDion="root" routerLinkActive="active-item" >BOOKS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/books"  routerLinkActive="active-item" >BOOKS</ion-button>
     <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/sorting-hat" routerDirectDion="root" routerLinkActive="active-item" >SORTING HAT</ion-button>
     <ion-button fill="clear" class="nav-feature" (click)="onLogout()">LOGOUT</ion-button>
   </div>

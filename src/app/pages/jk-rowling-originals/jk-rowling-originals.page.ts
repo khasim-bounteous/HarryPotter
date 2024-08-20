@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
-import { JkOriginal } from 'src/app/interface/jk-original';
+import { JKOriginal, JKOriginals } from 'src/app/interface/jk-original';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { getJkOrignals } from 'src/app/store/Potter.selector';
 
 @Component({
   selector: 'app-jk-rowling-originals',
@@ -11,16 +13,16 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class JkRowlingOriginalsPage implements OnInit {
 
   constructor(
-    private potterService: FirebaseService
+    private store: Store
   ) { }
 
-  writings$ !: Observable<JkOriginal[]>
+  writings$ !: Observable<JKOriginals>
   isLoaded = false;
 
   
   ngOnInit() {
-    this.writings$ = this.potterService.getJKrowlingoriginals().pipe(
-      tap(()=>this.isLoaded = true),
+    this.writings$ = this.store.select(getJkOrignals).pipe(
+      tap(()=>this.isLoaded = true)
     )
   }
 

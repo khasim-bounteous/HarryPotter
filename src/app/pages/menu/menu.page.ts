@@ -3,7 +3,7 @@ import { MenuController, Platform } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { FactFiles } from 'src/app/interface/fact-file';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
-import { loadFactFiles, loadUserDetails } from 'src/app/store/Potter.action';
+import { loadBooks, loadFactFiles, loadFilms, loadJKOriginals, loadUserDetails } from 'src/app/store/Potter.action';
 
 @Component({
   selector: 'app-menu',
@@ -49,7 +49,7 @@ export class MenuPage implements OnInit {
   constructor(
     private menu: MenuController,
     private plt: Platform,
-    private  store: Store<{factfiles: FactFiles}>,  
+    private  store: Store,  
     private firebaeAuthService: FirebaesAuthService
     
   ) { 
@@ -64,7 +64,10 @@ export class MenuPage implements OnInit {
 
   initialize(){
     this.store.dispatch(loadFactFiles({category: "all",searchTerm: null}));
-    this.store.dispatch(loadUserDetails())
+    this.store.dispatch(loadUserDetails());
+    this.store.dispatch(loadBooks())
+    this.store.dispatch(loadFilms())
+    this.store.dispatch(loadJKOriginals())
   }
 
   onLogout(){

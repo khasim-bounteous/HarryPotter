@@ -2,12 +2,15 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { EMPTY, catchError, exhaustMap, from, map, of, switchMap, tap, withLatestFrom } from "rxjs";
 import { FirebaseService } from "../services/firebase.service";
-import { LOAD_FACTFILES, LOAD_USER_DETAILS, loadFactFiles, loadFactFilesSuccess, loadUserDetailsSuccess } from "./Potter.action";
+import { LOAD_BOOKS, LOAD_FACTFILES, LOAD_USER_DETAILS, loadBookSuccess, loadFactFiles, loadFactFilesSuccess, loadFilms, loadFilmSuccess, loadJKOriginals, loadJKOriginalSuccess, loadUserDetailsSuccess } from "./Potter.action";
 import { Store } from "@ngrx/store";
 import {FactFiles } from "../interface/fact-file";
 import { getFactFileLastKey } from "./Potter.selector";
 import { UserDetails } from "../interface/userauth";
 import { FirebaesAuthService } from "../services/firebaes-auth.service";
+import { Book } from "../interface/book";
+import { Film } from "../interface/film";
+import { JKOriginal } from "../interface/jk-original";
 
 @Injectable()
 export class PotterEffect{
@@ -47,19 +50,40 @@ export class PotterEffect{
         );
       });
 
-      
-      
+      _loadBooks$ = createEffect(()=>{
+        return this.actions$.pipe(
+          ofType(LOAD_BOOKS),
+          switchMap(()=>{
+            return from(this.potterService.getBooks()).pipe(
+              map((books:Book[])=>loadBookSuccess({books})),
+              catchError(error => of({ type: '[books] Load books Failure', error })) // Handle error appropriately
+            )
+          })
+        )
+      })
+
+      _loadFilms$ = createEffect(()=>{
+        return this.actions$.pipe(
+          ofType(loadFilms),
+          switchMap(()=>{
+            return from(this.potterService.getFilms()).pipe(
+              map((films:Film[])=>loadFilmSuccess({films})),
+              catchError(error => of({ type: '[films] Load films Failure', error })) // Handle error appropriately
+            )
+          })
+        )
+      })
+
+      _loadOginals$ = createEffect(()=>{
+        return this.actions$.pipe(
+          ofType(loadJKOriginals),
+          switchMap(()=>{
+            return from(this.potterService.getJKrowlingoriginals()).pipe(
+              map((jkOriginals:JKOriginal[])=>loadJKOriginalSuccess({jkOriginals})),
+              catchError(error => of({ type: '[jkOriginal] Load jkOriginal Failure', error })) // Handle error appropriately
+            )
+          })
+        )
+      })
 }
 
-// this.firebaseService.getFactfiles(this.category, this.lastKey, this.limit).subscribe(factFiles => {
-//     this.factFiles = [...this.factFiles, ...factFiles];
-
-//     if (factFiles.length > 0) {
-//       this.lastKey = factFiles[factFiles.length - 1].key;
-//     }
-
-//     this.loading = false;
-//     if (event) {
-//       event.target.complete();
-//     }
-//   });

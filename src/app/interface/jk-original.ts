@@ -7,7 +7,13 @@ export interface JKOriginalData{
     url: string;
     urlImage:string
 }
-export interface JkOriginal {
+export interface JKOriginal {
     key: string;
     data: JKOriginalData
+}
+
+export interface JKOriginals{
+    jkOriginals: JKOriginal[],
+    loading: boolean,
+    error: any
 }

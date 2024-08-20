@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
-import { FactFileState, UserState } from "./Potter.state";
-import { loadFactFiles, loadFactFilesSuccess, loadUserDetailsSuccess, resetFactFiles, resetUserDetails } from "./Potter.action";
+import { BookState, FactFileState, FilmState, JK_OrginalState, UserState } from "./Potter.state";
+import { loadBookSuccess, loadFactFiles, loadFactFilesSuccess, loadFilmSuccess, loadJKOriginalSuccess, loadUserDetailsSuccess, resetFactFiles, resetUserDetails } from "./Potter.action";
 
 const _factFileReducer = createReducer(
     FactFileState,
@@ -59,6 +59,41 @@ const _userDetailsReducer = createReducer(
     })
 )
 
+const _booksReducer = createReducer(
+    BookState,
+    on(loadBookSuccess,(state,{books})=>{
+        return{
+            ...state,
+            books: books,
+            loading: false,
+            error: null,
+        }
+    }),
+)
+
+const _filmsReducer = createReducer(
+    FilmState,
+    on(loadFilmSuccess,(state,{films})=>{
+        return{
+            ...state,
+            films: films,
+            loading: false,
+            error: null,
+        }
+    }),
+)
+
+const _jkOriginalReducer = createReducer(
+    JK_OrginalState,
+    on(loadJKOriginalSuccess,(state,{jkOriginals})=>{
+        return{
+            ...state,
+            jkOriginals: jkOriginals,
+            loading: false,
+            error: null,
+        }
+    }),
+)
 
 
 export function factFileReducer(state: any,action:any){
@@ -67,4 +102,16 @@ export function factFileReducer(state: any,action:any){
 
 export function userDetailsReducer(state: any,action:any){
     return _userDetailsReducer(state,action);
+}
+
+export function booksReducer(state: any,action:any){
+    return _booksReducer(state,action);
+}
+
+export function filmsReducer(state: any,action:any){
+    return _filmsReducer(state,action);
+}
+
+export function jkOriginalReducer(state: any,action:any){
+    return _jkOriginalReducer(state,action);
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, tap } from 'rxjs';
-import { JkOriginal} from 'src/app/interface/jk-original';
+import { JKOriginal} from 'src/app/interface/jk-original';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class JkWritingDetailsPage implements OnInit {
 
-  jkOriginal$ !: Observable<JkOriginal>; 
+  jkOriginal$ !: Observable<JKOriginal>; 
   isLoaded = false;
   
   constructor(

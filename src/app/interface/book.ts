@@ -1,6 +1,5 @@
 
 export interface Book {
-
         key: string;
         data: {
                 name: string;
@@ -9,4 +8,11 @@ export interface Book {
                 description: string;
                 category: string
         }
+}
+
+
+export interface Books{
+        books: Book[];
+        loading: boolean;
+        error: any;
 }

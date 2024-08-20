@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
-import { Book } from 'src/app/interface/book';
+import { Book, Books } from 'src/app/interface/book';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { getBooks } from 'src/app/store/Potter.selector';
 
 @Component({
   selector: 'app-books',
@@ -10,14 +12,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class BooksPage implements OnInit {
 
-  books$ !: Observable<Book[]>
+  books$ !: Observable<Books>
   isLoaded = false
   constructor(
-    private firbaseService: FirebaseService
+    private store: Store
   ) { }
 
   ngOnInit() {
-    this.books$ = this.firbaseService.getBooks().pipe(
+    this.books$ = this.store.select(getBooks).pipe(
       tap(() => this.isLoaded = true)
     )  
   }

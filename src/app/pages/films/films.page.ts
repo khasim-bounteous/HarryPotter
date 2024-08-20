@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable, tap } from 'rxjs';
 import { Book } from 'src/app/interface/book';
+import { Films } from 'src/app/interface/film';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { getFilms } from 'src/app/store/Potter.selector';
 
 @Component({
   selector: 'app-films',
@@ -11,16 +14,15 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class FilmsPage implements OnInit {
 
-  films$ !: Observable<Book[]>;
+  films$ !: Observable<Films>
   isLoaded = false;
 
   constructor(
-    private route: ActivatedRoute,
-    private firebaseService: FirebaseService
+    private store: Store
   ) { }
 
   ngOnInit() {
-    this.films$ = this.firebaseService.getFilms().pipe(
+    this.films$ = this.store.select(getFilms).pipe(
       tap(()=>this.isLoaded = true),
     )
   }
