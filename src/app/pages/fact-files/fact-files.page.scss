@@ -384,7 +384,7 @@ ion-content {
 
     // filter
     .fact-file-filter-container {
-        gap: 4px;
+        gap: 3px;
     }
 
     .filter-icon {
@@ -400,7 +400,8 @@ ion-content {
         &-inner {
             font-size: .5rem;
             p {
-                padding: 0px 2px;
+                // padding: 0px 1px;
+                height: fit-content;
                 text-align: center;
             }
         }
