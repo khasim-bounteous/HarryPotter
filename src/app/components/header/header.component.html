@@ -1,9 +1,25 @@
 <ion-header class="mobile-nav">
   <ion-toolbar>
-    <ion-menu-button class="menu-button"></ion-menu-button>
+    <ion-menu-button class="menu-button"><svg data-testid="HamburgerMenuIconClosed" width="100%" height="100%"
+        viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="#FFFFFF" stroke-width="2">
+          <path d="M0,0.5 L23,0.5" class="HamburgerMenu_hamburgerTop__ebjwH" transform="matrix(1,0,0,1,0,0)"
+            data-svg-origin="16.099999999999998 0.5"
+            style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 70%, 15%;">
+          </path>
+          <path d="M0,9.5 L23,9.5" class="HamburgerMenu_hamburgerMiddle__HwnnX" data-svg-origin="5.75 9.5"
+            transform="matrix(1,0,0,1,0,0)"
+            style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 100%, 0px; opacity: 1;">
+          </path>
+          <path d="M23,18.5 L0,18.5" class="HamburgerMenu_hamburgerBottom__wsCUb" data-svg-origin="11.5 18.5"
+            transform="matrix(1,0,0,1,0,0)"
+            style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px; stroke-dasharray: 0px, 0px, 70%, 15%;">
+          </path>
+        </g>
+      </svg></ion-menu-button>
     <div class="header-img-con">
       <img routerLink="/" class="header-img" src="../../../assets/logo.svg" alt="">
-    </div> 
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -16,16 +32,22 @@
       <img routerLink="/" class="nav-logo" src="../../../assets/logo.svg" width="50px" alt="">
     </ion-col>
     <ion-col size="2" class="nav-end">
-        <input fill="outline" placeholder="Search" class="search">
-        <img routerLink="/profile" class="profile-pic" src="../../../assets/profile.jpg" />
+      <input fill="outline" placeholder="Search" class="search">
+      <img routerLink="/profile" class="profile-pic" src="../../../assets/profile.jpg" />
     </ion-col>
   </ion-row>
-  <div class="secondary-nav" >
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/films"  routerLinkActive="active-item" >FILMS</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item" >J.K. ROWLING ARCHIVE</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/fact-files" routerDirection="root" routerLinkActive="active-item" >FACT FILES</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/books"  routerLinkActive="active-item" >BOOKS</ion-button>
-    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/sorting-hat" routerDirectDion="root" routerLinkActive="active-item" >SORTING HAT</ion-button>
+  <div class="secondary-nav">
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/films"
+      routerLinkActive="active-item">FILMS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}"
+      routerLink="/jk-rowling-originals" routerDirection="root" routerLinkActive="active-item">J.K. ROWLING
+      ARCHIVE</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/fact-files"
+      routerDirection="root" routerLinkActive="active-item">FACT FILES</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/books"
+      routerLinkActive="active-item">BOOKS</ion-button>
+    <ion-button fill="clear" class="nav-feature" [routerLinkActiveOptions]="{exact:true}" routerLink="/sorting-hat"
+      routerDirectDion="root" routerLinkActive="active-item">SORTING HAT</ion-button>
     <ion-button fill="clear" class="nav-feature" (click)="onLogout()">LOGOUT</ion-button>
   </div>
 
