@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
+    path: 'add_data',
+    loadChildren: () => import('./pages/tem/tem.module').then( m => m.TemPageModule)
+  }, 
+  {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     ...canActivate(redirectLoggedInToHome)
@@ -44,10 +48,6 @@ const routes: Routes = [
     path: 'not-found',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-  {
-    path: 'add_data',
-    loadChildren: () => import('./pages/tem/tem.module').then( m => m.TemPageModule)
-  }, 
   {
     path: '**',
     component: NotFoundPage

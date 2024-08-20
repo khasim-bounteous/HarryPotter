@@ -62,78 +62,6 @@ export class FirebaseService {
     );
   }
 
-  // getFactfiles(category: string, startAtKey: string | null = null): Observable<FactFile[]> {
-  //   let queryFn;
-  //   if (category === 'all') {
-  //     queryFn = (ref: any) => {
-  //       let query = ref.orderByKey().limitToFirst(20);
-  //       if (startAtKey) {
-  //         query = query.startAfter(startAtKey);
-  //       }
-  //       return query;
-  //     };
-  //   } else {
-  //     queryFn = (ref: any) => {
-  //       let query = ref.orderByChild('category').equalTo(category).limitToFirst(20);
-  //       console.log(startAtKey)
-  //       if (startAtKey) {
-  //         query = query.startAfter(startAtKey);
-  //       }
-  //       return query;
-  //     };
-  //   }
-  
-  //   return this.db.list('/fact_files', queryFn).snapshotChanges().pipe(
-  //     map(actions =>
-  //       actions.map(a => {
-  //         const key = a.payload.key;
-  //         const data = a.payload.val() as FactFile['data'];
-  //         return { key, data } as FactFile;
-  //       })
-  //     )
-  //   );
-  // }
-
-  // getFactfiles(category: string, startAtKey: string | null = null): Observable<FactFile[]> {
-  //   let queryFn;
-  //   if (category === 'all') {
-  //     queryFn = (ref: any) => {
-  //       let query = ref.orderByKey().limitToFirst(20);
-  //       if (startAtKey) {
-  //         query = query.startAfter(startAtKey);
-  //       }
-  //       return query;
-  //     };
-  //     return this.db.list('/fact_files', queryFn).snapshotChanges().pipe(
-  //       map(actions =>
-  //         actions.map(a => {
-  //           const key = a.payload.key;
-  //           const data = a.payload.val() as FactFile['data'];
-  //           return { key, data } as FactFile;
-  //         })
-  //       )
-  //     );
-  //   } else {
-  //     queryFn = (ref: any) => {
-  //       let query = ref.orderByKey().limitToFirst(20);
-  //       if (startAtKey) {
-  //         query = query.startAfter(startAtKey);
-  //       }
-  //       return query;
-  //     };
-
-  //     return this.db.list(category, queryFn).snapshotChanges().pipe(
-  //       map(actions =>
-  //         actions.map(a => {
-  //           const key = a.payload.key;
-  //           const data = a.payload.val() as FactFile['data'];
-  //           return { key, data } as FactFile;
-  //         })
-  //       )
-  //     );
-  //   }
-  
-  // }
   getFactfiles(
     category: string,
     startAtKey: string | null = null,
@@ -251,7 +179,7 @@ export class FirebaseService {
 
 
   addData(filters: any[]): void {
-    const itemsRef = this.db.list('/profileContent'); 
+    const itemsRef = this.db.list('/character_pets'); 
     filters.forEach(filter => {
       itemsRef.push(filter); 
     });

@@ -5,7 +5,6 @@ import { loadBookSuccess, loadFactFiles, loadFactFilesSuccess, loadFilmSuccess, 
 const _factFileReducer = createReducer(
     FactFileState,
     on(loadFactFiles,(state)=>{
-        console.log(state.lastKey)
         return{
             ...state
         }
