@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { loadUserDetails } from 'src/app/store/Potter.action';
 import { getUserDetails } from 'src/app/store/Potter.selector';
 
 @Component({
@@ -9,16 +10,41 @@ import { getUserDetails } from 'src/app/store/Potter.selector';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
-export class SettingsComponent  implements OnInit {
-  constructor(
-    private store: Store<{userDetails: UserDetails}>
-  ) { }
+export class SettingsComponent implements OnInit {
+  userDetails!: UserDetails;
+  editableDetails!: UserDetails;
+  isEditing = false;
+  editingField: string | null = null;
 
-  userDetails !: UserDetails
+  constructor(
+    private store: Store<{userDetails: UserDetails}>,
+    private authService: FirebaesAuthService  // Inject Firebase Auth Service
+  ) {}
+
   ngOnInit() {
     this.store.select(getUserDetails).subscribe(userDetails => {
-      this.userDetails = userDetails
-      console.log(userDetails)
+      this.userDetails = userDetails;
+      this.editableDetails = { ...userDetails };  // Clone the details for editing
     });
+  }
+
+  editField(field: string) {
+    this.isEditing = true;
+    this.editingField = field;
+  }
+
+  cancelEdit() {
+    this.isEditing = false;
+    this.editingField = null;
+    this.editableDetails = { ...this.userDetails };  // Reset to original values
+  }
+
+  saveChanges() {
+    this.authService.updateUserDetails(this.editableDetails.firstName, this.editableDetails.lastName, this.editableDetails.dob).then(()=>{
+      this.isEditing = false;
+      this.editingField = null;
+      this.store.dispatch(loadUserDetails())
+    })
+
   }
 }

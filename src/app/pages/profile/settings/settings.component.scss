@@ -12,6 +12,22 @@
     }
 }
 
+.edit{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.save , .cancel{
+    margin: 0px 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+}
 
 .settings {
     h1{
@@ -23,6 +39,8 @@
     }
     &-con-box{
         margin: 50px 0px;
+        position: relative;
+        gap: 20px 5px;
         small{
             font-size: 1.3rem;
             margin: 10px;
@@ -30,6 +48,9 @@
         p{
             margin: 10px;
             font-size: 2rem;
+        }
+        input{
+            padding: 5px;
         }
     }
 }

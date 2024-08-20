@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { from, Observable, switchMap } from 'rxjs';
+import { first, from, last, Observable, switchMap } from 'rxjs';
 import { Database, ref, set, get, update } from '@angular/fire/database';
-import { doc, Firestore, setDoc } from '@angular/fire/firestore';
+import { doc, Firestore, setDoc, updateDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { UserDetails } from '../interface/userauth';
 
 @Injectable({
   providedIn: 'root'
@@ -87,5 +88,21 @@ export class FirebaesAuthService {
     return null;
   }
 
-  
+
+  // async addWandToUserProfile(wand: string | null): Promise<void> {
+  //   const user = this.getUser();
+  //   if (user) {
+  //     const userRef = ref(this.db, `users/${user.uid}`);
+  //     await update(userRef, { wand }); 
+  //   }
+  // }
+
+  async updateUserDetails(firstName: string | null, lastName: string | null, dob: string | null): Promise<void> {
+    const user = this.getUser();
+    console.log(firstName,lastName,dob);
+    if (user && firstName && lastName && dob) {
+      const userRef = ref(this.db, `users/${user.uid}`);
+      await update(userRef, { firstName,lastName,dob }); 
+    }
+  }
 }

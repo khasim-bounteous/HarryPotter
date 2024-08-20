@@ -14,10 +14,10 @@
             {{item.title | uppercase}}
           </div>
           <div class="menu-item"  *ngIf="userLoggedIn" (click)="onLogout()">
-            Logout
+            LOGOUT
           </div>
           <div class="menu-item"  *ngIf="!userLoggedIn" routerLink="/login">
-            Login
+            LOGIN
           </div>
         </div>
       </div>
