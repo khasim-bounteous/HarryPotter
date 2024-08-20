@@ -165,7 +165,7 @@ ion-content {
         color: rgb(186, 156, 103);
     }
     h1{
-        font-size: 36px;
+        font-size: 2rem;
         font-family: "Merriweather", serif;
         font-weight: bold;
         font-style: normal;
@@ -206,15 +206,15 @@ ion-content {
 }
 
 .filter-box {
-    height: 170px;
+    height: 180px;
     background-color: rgb(28, 30, 39);
     border-radius: 5px;
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    flex-basis: 0%;
     flex-grow: 1;
+    width: 10%;
     flex-shrink: 1;
     line-height: 22px;
     padding: 7px;
@@ -325,7 +325,6 @@ ion-content {
 
     .filter-box-inner {
         font-size: .7rem;
-
         p {
             padding: 0px 2px;
             text-align: center;
@@ -335,12 +334,11 @@ ion-content {
 
 @media (max-width:780px) {
 
-    .featured-image-container {
-        height: 250px;
-    }
 
     .featured-content {
-        height: 250px;
+        h1{
+            font: 1.5rem;
+        }
     }
 
     .fact-file-filter-container {
@@ -353,8 +351,8 @@ ion-content {
     }
 
     .filter-box {
-        flex-basis: 20%;
-        height: 125px;
+        width: 20%;
+        height: 140px;
     }
 }
 
@@ -386,7 +384,7 @@ ion-content {
 
     // filter
     .fact-file-filter-container {
-        gap: 3px;
+        gap: 4px;
     }
 
     .filter-icon {
@@ -395,22 +393,12 @@ ion-content {
     }
 
     .filter-box {
-        flex-basis: 22%;
-        height: 120px;
-        font-size: 13px;
+        width:  20%;
+        height: 110px;
         line-height: 12px;
 
-        &-con{
-            padding: 0px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0px 2px;
-        }
-
         &-inner {
-            font-size: .6rem;
-
+            font-size: .5rem;
             p {
                 padding: 0px 2px;
                 text-align: center;
