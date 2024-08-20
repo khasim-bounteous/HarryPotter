@@ -386,7 +386,7 @@ ion-content {
 
     // filter
     .fact-file-filter-container {
-        gap: 8px;
+        gap: 3px;
     }
 
     .filter-icon {
@@ -395,10 +395,18 @@ ion-content {
     }
 
     .filter-box {
-        flex-basis: 20%;
-        height: 110px;
+        flex-basis: 22%;
+        height: 120px;
         font-size: 13px;
         line-height: 12px;
+
+        &-con{
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 2px;
+        }
 
         &-inner {
             font-size: .6rem;
