@@ -89,13 +89,13 @@ export class FirebaesAuthService {
   }
 
 
-  // async addWandToUserProfile(wand: string | null): Promise<void> {
-  //   const user = this.getUser();
-  //   if (user) {
-  //     const userRef = ref(this.db, `users/${user.uid}`);
-  //     await update(userRef, { wand }); 
-  //   }
-  // }
+  async changeAvatar(avatar: string | null | undefined): Promise<void> {
+    const user = this.getUser();
+    if (user && avatar) {
+      const userRef = ref(this.db, `users/${user.uid}`);
+      await update(userRef, { avatar }); 
+    }
+  }
 
   async updateUserDetails(firstName: string | null, lastName: string | null, dob: string | null): Promise<void> {
     const user = this.getUser();

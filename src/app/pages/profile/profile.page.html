@@ -4,8 +4,20 @@
       <div class="profile">
         <div class="profile-inner">
           <picture class="profile-picture">
-            <img src="../../../assets/profile.jpg" alt="">
+            <img *ngIf="avatar" [src]="'../../../assets/avatars/'+avatar" alt="">
           </picture>
+          <div *ngIf="isAvatarChanged" class="edit-options">
+            <ion-icon (click)="saveChanges()" name="checkmark-outline"></ion-icon>
+            <ion-icon (click)="cancelChanges()" name="close-outline"></ion-icon>
+          </div>
+          <div class="small-avatars">
+            <div *ngFor="let smallAvatar of otherAvatars" class="small-avatar" (click)="updateAvatar(smallAvatar)">
+              <picture>
+                <img [src]="'../../../assets/avatars/' + smallAvatar" alt="Avatar">
+              </picture>
+            </div>
+          </div>
+
           <div class="profile-details">
             <h1 class="profile-name">{{userDetails?.firstName | titlecase}} {{userDetails?.lastName | titlecase}}</h1>
             <div class="profile-panel">
