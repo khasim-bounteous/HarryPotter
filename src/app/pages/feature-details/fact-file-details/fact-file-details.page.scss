@@ -76,7 +76,6 @@ ion-content {
     height: 120px;
     width: 100px;
     text-align: center;
-    font-size: 9.72px;
 
     &-frame {
         background-clip: border-box;
@@ -95,7 +94,7 @@ ion-content {
     }
 
     &-content{
-        font-size: .8rem;
+        font-size: .7rem;
         padding: 0px 2px;
         font-weight: bold;
     }
@@ -346,7 +345,7 @@ hr {
         }
 
         &-content {
-            font-size: 8px;
+            font-size: .4rem
         }
     }
 

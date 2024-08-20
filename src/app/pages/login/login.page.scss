@@ -1,5 +1,6 @@
 .root {
     color: white;
+    font-family: "Lexend", sans-serif;
 
     &::before {
         content: "";
@@ -80,6 +81,9 @@
         h1 {
             font-size: 3em;
             padding-bottom: 20px;
+            font-family: "Merriweather", serif;
+            font-weight: bold;
+            font-style: normal;
         }
     }
 
