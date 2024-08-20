@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { MenuPage } from './menu.page';
 import { NotFoundPage } from '../not-found/not-found.page';
-import { NewsPageModule } from '../news/news.module';
+import { wandGuard } from 'src/app/guards/wand.guard';
+ 
 
 const routes: Routes = [
   {
@@ -14,6 +14,15 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('../home/home.module').then( m => m.HomePageModule)
       },
+      {
+        path: 'sorting-hat',
+        loadChildren: () => import('../sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule),
+      },
+      {
+        path: 'wand',
+        loadChildren: () => import('../wand/wand.module').then( m => m.WandPageModule),
+        canActivate: [wandGuard]
+      }, 
       {
         path: 'books',
         loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)

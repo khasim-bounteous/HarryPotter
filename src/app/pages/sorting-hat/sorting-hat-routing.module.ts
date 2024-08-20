@@ -13,7 +13,6 @@ const routes: Routes = [
     path: 'questions',
     loadChildren: () => import('./sorting-hat-questions/sorting-hat-questions.module').then( m => m.SortingHatQuestionsPageModule),
     canActivate: [sortingHatGuard]
-
   },
 
 ];

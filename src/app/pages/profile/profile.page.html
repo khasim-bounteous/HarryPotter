@@ -7,7 +7,7 @@
             <img src="../../../assets/profile.jpg" alt="">
           </picture>
           <div class="profile-details">
-            <h1 class="profile-name">{{userDetails?.firstName}} {{userDetails?.lastName}}</h1>
+            <h1 class="profile-name">{{userDetails?.firstName | titlecase}} {{userDetails?.lastName | titlecase}}</h1>
             <div class="profile-panel">
               <div class="profile-panel-feature">
                 <picture>

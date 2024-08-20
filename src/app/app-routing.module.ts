@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NotFoundPage } from './pages/not-found/not-found.page';
 import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate} from '@angular/fire/auth-guard';
-import { wandGuard } from './guards/wand.guard';
- 
+
 const redirectUnauthorizedToLogIn = () => redirectUnauthorizedTo(['/login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['/']);
 
@@ -22,15 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     ...canActivate(redirectLoggedInToHome)
   },
-  {
-    path: 'sorting-hat',
-    loadChildren: () => import('./pages/sorting-hat/sorting-hat.module').then( m => m.SortingHatPageModule),
-  },
-  {
-    path: 'wand',
-    loadChildren: () => import('./pages/wand/wand.module').then( m => m.WandPageModule),
-    canActivate: [wandGuard]
-  }, 
   {
     path: 'forgot-password',
     loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)

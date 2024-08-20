@@ -4,9 +4,11 @@ import { Store } from '@ngrx/store';
 import { UserDetails } from '../interface/userauth';
 import { getUserDetails } from '../store/Potter.selector';
 import { ToastService } from '../services/toast.service';
+import { FirebaesAuthService } from '../services/firebaes-auth.service';
 
 export const sortingHatGuard: CanActivateFn = (route, state) => {
   const store = inject(Store)
+  const firebaseService = inject(FirebaesAuthService)
   const router = inject(Router)
   const toastService = inject(ToastService)
   let userDetails !: UserDetails 
@@ -15,6 +17,10 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
     userDetails = data
   })
 
+  // firebaseService.getUserDetails().then((userDetails) => {
+  //   userDetails = userDetails
+  // })
+  
   if(userDetails)
     {
       if(userDetails.house)
@@ -24,11 +30,12 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
         return false;
       }
       else
-        return true;
+        return true;  
     }
     else
     {
       toastService.presentToast('Please login for Sorting Hat ceremony')
+      router.navigate(['/login']);
       return false
     }
 };

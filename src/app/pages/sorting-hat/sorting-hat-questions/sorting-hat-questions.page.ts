@@ -29,6 +29,7 @@ export class  SortingHatQuestionsPage  implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   house: string | null = null;
