@@ -66,6 +66,7 @@ export class ProfilePage implements OnInit {
   cancelChanges(){
     this.isAvatarChanged = false;
     this.avatar = this.userDetails?.avatar
+    this.updateOtherAvatars()
   }
 
 }
