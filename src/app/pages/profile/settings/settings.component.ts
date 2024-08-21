@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserDetails } from 'src/app/interface/userauth';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { loadUserDetails } from 'src/app/store/Potter.action';
 import { getUserDetails } from 'src/app/store/Potter.selector';
 
@@ -18,7 +19,8 @@ export class SettingsComponent implements OnInit {
 
   constructor(
     private store: Store<{userDetails: UserDetails}>,
-    private authService: FirebaesAuthService  // Inject Firebase Auth Service
+    private authService: FirebaesAuthService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit() {
@@ -36,7 +38,7 @@ export class SettingsComponent implements OnInit {
   cancelEdit() {
     this.isEditing = false;
     this.editingField = null;
-    this.editableDetails = { ...this.userDetails };  // Reset to original values
+    this.editableDetails = { ...this.userDetails };  
   }
 
   saveChanges() {
@@ -44,6 +46,7 @@ export class SettingsComponent implements OnInit {
       this.isEditing = false;
       this.editingField = null;
       this.store.dispatch(loadUserDetails())
+      this.toastService.presentToast(`${this.editField} updated successfully`)
     })
 
   }
