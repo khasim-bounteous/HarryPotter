@@ -241,7 +241,7 @@
   align-items: center;
 }
 
-.feature-title {
+.feature-title, .fact-title {
   color: rgb(210, 170, 107);
   font-size: 32px;
   font-weight: 500;
@@ -426,7 +426,7 @@ swiper-slide img {
       text-align: center;
       h1 {
         margin: 25px 0px;
-      font-size: 24px;
+        font-size: 24px;
       }
     }
 
@@ -450,9 +450,11 @@ swiper-slide img {
       margin: auto;
       height: fit-content;
       max-width: 1200px;
-  
+      text-align: center;
+
       h1 {
-        margin: 0px;
+        margin: 25px 0px;
+        font-size: 24px;
       }
     }
   
