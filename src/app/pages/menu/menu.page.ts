@@ -63,11 +63,11 @@ export class MenuPage implements OnInit {
   }
 
   initialize(){
-    // this.store.dispatch(loadFactFiles({category: "all",searchTerm: null}));
+    this.store.dispatch(loadFactFiles({category: "all",searchTerm: null}));
     this.store.dispatch(loadUserDetails());
-    // this.store.dispatch(loadBooks())
-    // this.store.dispatch(loadFilms())
-    // this.store.dispatch(loadJKOriginals())
+    this.store.dispatch(loadBooks())
+    this.store.dispatch(loadFilms())
+    this.store.dispatch(loadJKOriginals())
   }
 
   onLogout(){
