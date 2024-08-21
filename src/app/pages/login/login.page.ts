@@ -53,26 +53,13 @@ export class LoginPage implements OnInit {
         },
         error: async (error) => {
           this.isLoading = false
-          this.toastService.presentToast("invalid credentials");
+          this.toastService.presentToast("invalid credentials","danger",5000);
           console.error(error);
         }
       })
-      // this.authService.userLogin(loginData).subscribe({
-      //   next: data=>{
-      //     localStorage.setItem("access_token",data.access_token)
-      //     localStorage.setItem("refresh_token",data.refresh_token)
-      //     this.toastService.presentToast('Login successful!');
-      //     this.loginForm.reset()
-      //     this.router.navigate(['/menu/home']);
-      //   },
-      //   error: (error)=>{
-      //     this.toastService.presentToast('Login failed!! please enter your login details correctly');
-      //     console.log(error.error.message)
-      //   }
-      // })
     }
     else{
-      this.toastService.presentToast('Please fill the fields')
+      this.toastService.presentToast('Please fill the fields',"warning")
     }
   }
 

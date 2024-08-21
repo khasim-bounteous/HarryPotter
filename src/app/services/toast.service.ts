@@ -10,12 +10,12 @@ export class ToastService {
     private toastController: ToastController 
   ) { }
 
-  async presentToast(message: string) {
+  async presentToast(message: string, color: string = 'success',duration: number = 2000) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000,
+      duration: duration,
       position: 'bottom',
-      color: 'success'
+      color: color
     });
     toast.present();
   }

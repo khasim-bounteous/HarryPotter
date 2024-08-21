@@ -18,10 +18,10 @@ export class SettingsComponent implements OnInit {
   editingField: string | null = null;
 
   constructor(
-    private store: Store<{userDetails: UserDetails}>,
+    private store: Store<{ userDetails: UserDetails }>,
     private authService: FirebaesAuthService,
     private toastService: ToastService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.store.select(getUserDetails).subscribe(userDetails => {
@@ -38,16 +38,47 @@ export class SettingsComponent implements OnInit {
   cancelEdit() {
     this.isEditing = false;
     this.editingField = null;
-    this.editableDetails = { ...this.userDetails };  
+    this.editableDetails = { ...this.userDetails };
   }
 
   saveChanges() {
-    this.authService.updateUserDetails(this.editableDetails.firstName, this.editableDetails.lastName, this.editableDetails.dob).then(()=>{
+
+    const dob = this.editableDetails.dob;
+
+    if (this.editingField == 'dob') {
+      if (!dob) {
+        this.toastService.presentToast('Please select dob properly', 'danger',5000)
+        return
+      }
+      const currentDate = new Date();
+      const selectedDate = new Date(dob);
+      const ageDifference = currentDate.getFullYear() - selectedDate.getFullYear();
+
+      if(ageDifference < 13 ||
+        (ageDifference === 13 && currentDate < new Date(selectedDate.setFullYear(selectedDate.getFullYear() + 13)))){
+         
+          this.toastService.presentToast("Wizards and witches must be at least 13 years old to proceed",'danger',5000);
+          return
+      }
+
+    }
+    else if(this.editingField === 'name' && this.editableDetails.firstName?.trim() == '')
+    {
+      this.toastService.presentToast("First name shouldnt be empty or filled with spaces",'danger',5000)
+      return
+    }
+
+    this.authService.updateUserDetails(
+      this.editableDetails.firstName,
+      this.editableDetails.lastName,
+      dob
+    ).then(() => {
+      this.toastService.presentToast(`${this.editingField} updated successfully`);
       this.isEditing = false;
       this.editingField = null;
-      this.store.dispatch(loadUserDetails())
-      this.toastService.presentToast(`${this.editField} updated successfully`)
-    })
-
+      this.store.dispatch(loadUserDetails());
+    });
   }
 }
+
+

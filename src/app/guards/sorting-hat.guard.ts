@@ -26,7 +26,7 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
       if(userDetails.house)
       {
         router.navigate(['/profile'])
-        toastService.presentToast(`You have been sorted into ${userDetails.house}`)
+        toastService.presentToast(`You have been sorted into ${userDetails.house}`,'primary')
         return false;
       }
       else
@@ -34,7 +34,7 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
     }
     else
     {
-      toastService.presentToast('Please login for Sorting Hat ceremony')
+      toastService.presentToast('Please login for Sorting Hat ceremony','warning')
       router.navigate(['/login']);
       return false
     }

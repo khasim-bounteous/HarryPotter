@@ -49,12 +49,12 @@ export class SignupPage implements OnInit {
         },
         error: async (error) => {
           this.isLoading = false
-          this.toastService.presentToast(error.message);
+          this.toastService.presentToast(error.message,"danger",5000);
           console.error(error);
         }
       });
     } else {
-      this.toastService.presentToast("Please enter your details");
+      this.toastService.presentToast("Please enter your details","warning");
     }
   }
 }

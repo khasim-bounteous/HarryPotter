@@ -59,7 +59,7 @@ export class ProfilePage implements OnInit {
       this.isAvatarChanged = false
     })
     .catch(()=>{
-      this.toastService.presentToast("Updation failed")
+      this.toastService.presentToast("Updation failed","danger",4000)
     })
   }
 

@@ -23,7 +23,7 @@ export const wandGuard: CanActivateFn = (route, state) => {
     if(userDetails.wand)
     {
       router.navigate(['/profile'])
-      toastService.presentToast(`${userDetails.wand} have been choosen you`)
+      toastService.presentToast(`${userDetails.wand} have been choosen you`,'primary')
       return false;
     }
     else
@@ -31,7 +31,7 @@ export const wandGuard: CanActivateFn = (route, state) => {
   }
   else
   {
-    toastService.presentToast('Please login for choosing Wand')
+    toastService.presentToast('Please login for choosing Wand','warning')
     router.navigate(['/login']);
     return false
   }

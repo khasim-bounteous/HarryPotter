@@ -58,16 +58,24 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+        <div class="no-data" *ngIf="factFiles.length==0">
+          <div class="edge-line">
+            <hr>
+            <img  class="book-icon" src="../../../../assets/fact-files/book-icon.svg" alt="">
+            <hr>
+          </div>
+          <h1 class="no-data-title">No result found</h1>
+          <div class="edge-line">
+            <hr>
+            <img  class="book-icon" src="../../../../assets/fact-files/book-icon.svg" alt="">
+            <hr>
+          </div>
+        </div>
         <div class="load-more" *ngIf="factFiles.length!=0 && factFiles.length % 20 == 0">
           <button fill="outline" (click)="loadMore()">SHOW MORE</button>
         </div>
       </div>
       <div  class="loader" *ngIf="!isLoaded"><ion-spinner name="crescent"></ion-spinner></div>
-      <!-- Infinite Scroll -->
-      <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more fact files...">
-        </ion-infinite-scroll-content>
-      </ion-infinite-scroll> -->
     </div>
   </div>
 </ion-content>
