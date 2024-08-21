@@ -45,7 +45,7 @@ export class FirebaesAuthService {
           lastName: signupData.lastName,
           house: null,
           wand: null,
-          avatar: null,
+          avatar: 'avatar1.png',
           dob: signupData.dob
         }));
       })
