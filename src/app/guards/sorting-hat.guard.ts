@@ -17,9 +17,6 @@ export const sortingHatGuard: CanActivateFn = (route, state) => {
     userDetails = data
   })
 
-  // firebaseService.getUserDetails().then((userDetails) => {
-  //   userDetails = userDetails
-  // })
   
   if(userDetails)
     {

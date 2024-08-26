@@ -4,9 +4,7 @@ import { Store } from '@ngrx/store';
 import { FactFile } from 'src/app/interface/fact-file';
 import { FirebaesAuthService } from 'src/app/services/firebaes-auth.service';
 import { resetFactFiles, resetUserDetails } from 'src/app/store/Potter.action';
-// import { localStorageToken } from 'src/app/javascriptapis/localstorage.token';
-// import { SnackbarService } from 'src/app/services/snackbar.service';
-// import { UserauthService } from 'src/app/services/userauth.service';
+
 
 @Component({
   selector: 'app-header',
@@ -22,8 +20,7 @@ export class HeaderComponent  implements OnInit {
   ){}
 
   ngOnInit(): void {
-    // if(this.storage.getItem('access_token'))
-    //   this.userLoggedIn = true; 
+
   }
 
   onLogout(){

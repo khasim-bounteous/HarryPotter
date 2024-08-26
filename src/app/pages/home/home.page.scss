@@ -103,82 +103,6 @@
 
 }
 
-.check-list {
-  border: 0.1px solid rgba(255, 255, 255, 0);
-  margin: 0px;
-  background-image:
-    url('../../../assets/home-bg/horizons_quidditch.png'),
-    url('../../../assets/home-bg/stars.png'),
-    linear-gradient(180deg, #18150e, #554936 121.35%);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 2000px, 2000px, 100% 100%;
-  background-position: bottom center, top center, center center;
-  width: 100%;
-  position: relative;
-  color: rgb(255, 255, 255);
-  padding: 50px 0px;
-
-  &-img{
-    height: 300px;
-    width: 300px
-  }
-
-  &-inner {
-    max-width: 1200px;
-    height: 450px;
-    margin: auto;
-  }
-
-  &-card {
-    background: url('../../../assets/home-bg/explotion.png');
-    background-repeat: no-repeat;
-    background-color: transparent;
-  }
-
-  &-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 60px;
-  }
-
-  &-btn {
-    position: relative;
-    padding: 12px 24px;
-    margin: auto;
-    color: white;
-    font-weight: 600;
-    background-color: #c28e2e;
-    border-radius: 20px;
-    text-align: center;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(93deg, rgb(157, 133, 7) 6.8%, rgb(171, 133, 58) 49.06%, rgb(156, 120, 49) 104.04%);
-      opacity: 0.3;
-      z-index: -1;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover::before {
-      opacity: 0.6;
-    }
-
-    &:hover {
-      background-color: #87621b;
-      padding: 12px 24px;
-      /* Keep padding consistent */
-    }
-  }
-}
-
 
 .feature-swiper {
   &-root {
@@ -368,39 +292,6 @@ swiper-slide img {
       object-fit: cover;
     }
   }
-
-  .check-list {
-
-    background-image:
-      url('../../../assets/home-bg/horizons_mobile_quidditch.png'),
-      url('../../../assets/home-bg/stars.png'),
-      linear-gradient(180deg, #18150e, #554936 121.35%);
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 100%, 100%, 100% 100%;
-    background-position: bottom center, top center, center center;
-    padding: 20px 5px 50px 5px;
-
-    &-inner {
-      text-align: center;
-      margin: auto;
-      height: fit-content;
-      max-width: 1200px;
-    }
-
-    h1 {
-      margin: 15px 0px;
-      font-size: 24px;
-    }
-
-    &-card {
-      background: url('../../../assets/home-bg/explotion.png');
-      background-size:150px;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-color: transparent;
-    }
-  }
-
   .feature-swiper {
     &-root {
       border: 0.1px solid rgba(255, 255, 255, 0);
