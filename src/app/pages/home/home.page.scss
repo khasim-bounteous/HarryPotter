@@ -13,7 +13,7 @@
   height: 550px;
   margin: 0px;
   border: 0.1px solid rgba(255, 255, 255, 0);
-
+  animation: hero-animation 2.5s;
   ::after {
     content: "";
     background: linear-gradient(1turn, #07001449 40%, rgba(21, 17, 29, 0));
@@ -72,8 +72,24 @@
   }
 }
 
+@keyframes hero-animation {
+  from{
+    width: 0%;
+    left: 50%;
+    opacity: 0;
+  }
+  to{
+    width: 100%;
+    left: 0%;
+    opacity: 1;
+
+  }
+}
+
 .hero-mobile-bg {
   display: none;
+  width: fit-content;
+  position: relative;
 }
 
 .feature-cards {
@@ -224,7 +240,7 @@ swiper-slide img {
     background-position: bottom center, top center, center center;
     width: 100%;
     height: fit-content;
-
+    animation: none;
     ::after {
       display: none;
     }
@@ -257,7 +273,8 @@ swiper-slide img {
   }
 
   .hero-mobile-bg {
-    display: block
+    display: block;
+    position: relative;
   }
 
 }
